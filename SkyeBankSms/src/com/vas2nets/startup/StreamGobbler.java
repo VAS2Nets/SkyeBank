@@ -1,4 +1,4 @@
-package vas2nets.startup;
+package com.vas2nets.startup;
 
 
 import java.io.*;

@@ -1,4 +1,4 @@
-package vas2nets.startup;
+package com.vas2nets.startup;
 
 
 import java.awt.Desktop;
@@ -108,7 +108,8 @@ public class StartWebServer {
     
      public void startBrower(){
         
-        String url = "http://localhost:8000/test1.php";
+        //String url = "http://localhost:8000/test1.php";
+        String url = "http://localhost:8000/skye/login.html";
 
         if(Desktop.isDesktopSupported()){
             Desktop desktop = Desktop.getDesktop();
