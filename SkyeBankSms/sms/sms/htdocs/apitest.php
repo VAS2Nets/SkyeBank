@@ -12,7 +12,8 @@ include_once 'lib.php';
 $result = update_smpp('197.253.10.25','2775', 'kannel2', '12345');
 #echo $result;
 #var_dump(get_smpp());
-var_dump(get_plugins())
+#var_dump(get_plugins());
+echo test_smpp();
 
 ?>
 

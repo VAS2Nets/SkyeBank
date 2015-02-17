@@ -24,7 +24,8 @@ function get_smpp() {
 
 
 function test_smpp() {
-    
+    exec("java -jar /javafiles/SkyeBankSMPPTest.jar \"192.168.1.154\" \"kannel2\" \"12345\" \"2775\"", $output);
+    echo $output;
 }
 
 ################# Users ####################
@@ -39,8 +40,11 @@ function get_user($username) {
     return $one;
 }
 
-function login($username, $pwd) {
-    
+function is_user($pwd,$user = 'admin') {
+    $result = R::getRow('select count(id) num from users where username=? and passwd=? limit 1',
+            array($user,$pwd));
+    $val = $result['num'];
+    return ($val=='1');
 }
 
 ################# Plugins ####################
@@ -55,7 +59,7 @@ function update_plugin(){
     
 }
 function get_plugin($id){
-    
+    return R::getRow('select * from plugin where id = ? limit 1',array($id));
 }
 ?>
 
