@@ -25,11 +25,15 @@ function get_smpp() {
 
 function test_smpp() {
     $pwd = getcwd();
-    $jarfile = "$pwd/javafiles/SkyeBankSMPPTest.jar";
-    echo $jarfile;
-    exec("java -jar $jarfile \"192.168.1.154\" \"kannel2\" \"12345\" \"2775\"", $output);
-    echo "<br>";##
-    echo $output;
+    $jarfile='SkyeBankSMPPTest.jar';
+    $dir = "$pwd/javafiles/";
+    echo "$jarfile<br>";
+    $cmd = "cd \"$dir\" && java -jar $jarfile \"192.168.1.154\" \"kannel2\" \"12345\" \"2775\"";
+    echo "$cmd<br>";
+    exec("$cmd", $output);
+    var_dump($output);
+    $result = shell_exec($cmd);
+    echo "$result<br>";
 }
 
 ################# Users ####################
