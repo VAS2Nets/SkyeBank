@@ -89,32 +89,47 @@ function add_plugin() {
 }
 
 function update_plugin() {
-    try{
-    R::exec("update plugin set name=?,dbtype=?,host=?,pwd=?,username=?,sql_query=?,update_sql=?,"
-            ."senderid_col=?,msg_col=?,msisdn_col=?,id_col=?,status=?,user=? where id=?",array(
-                $_REQUEST['name'],
-                $_REQUEST['type'],
-                $_REQUEST['ip'],
-                $_REQUEST['pwd'],
-                $_REQUEST['username'],
-                $_REQUEST['sql_query'],
-                $_REQUEST['update_sql'],
-                $_REQUEST['sender'],
-                $_REQUEST['msg'],
-                $_REQUEST['receiver'],
-                $_REQUEST['cid'],
-                $_REQUEST['status'],
-                'admin',
-                $_REQUEST['id']
-            ));
-    return 'Success';
-    }
-    catch(Exception $ex){
+    try {
+        R::exec("update plugin set name=?,dbtype=?,host=?,pwd=?,username=?,sql_query=?,update_sql=?,"
+                . "senderid_col=?,msg_col=?,msisdn_col=?,id_col=?,status=?,user=? where id=?", array(
+            $_REQUEST['name'],
+            $_REQUEST['type'],
+            $_REQUEST['ip'],
+            $_REQUEST['pwd'],
+            $_REQUEST['username'],
+            $_REQUEST['sql_query'],
+            $_REQUEST['update_sql'],
+            $_REQUEST['sender'],
+            $_REQUEST['msg'],
+            $_REQUEST['receiver'],
+            $_REQUEST['cid'],
+            $_REQUEST['status'],
+            'admin',
+            $_REQUEST['id']
+        ));
+        return 'Success';
+    } catch (Exception $ex) {
         return 'Failure';
     }
 }
 
+function test_plugin(){
+    
+}
+
 function get_plugin($id) {
     return R::getRow('select * from plugin where id = ? limit 1', array($id));
+}
+
+################# SMS Test ###################
+
+function test_sms() {
+    $sender = $_REQUEST['sender'];
+    $receiver = $_REQUEST['receiver'];
+    $msg = $_REQUEST['msg'];
+    $cmd = "java -jar SMSTest.jar \"$sender\" \"+$receiver\" \"$ms\"";
+    echo "$cmd<br>";
+    exec("$cmd", $output);
+    return 'Success';
 }
 ?>
