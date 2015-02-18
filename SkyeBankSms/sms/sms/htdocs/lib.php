@@ -9,7 +9,9 @@ require_once 'init.php';
 function restart_engine() {
     
 }
+
 ################# SMPP ####################
+
 function update_smpp($host, $port, $username, $pwd) {
     R::exec("update smpp_setting set host=?,port=?,username=?,password=?", array($host, $port, $username, $pwd))
             or die('failure');
@@ -21,11 +23,9 @@ function get_smpp() {
     return $one;
 }
 
-
-
-function test_smpp($ip,$port,$username,$passwd) {
+function test_smpp($ip, $port, $username, $passwd) {
     $pwd = getcwd();
-    $jarfile='SSMPPTest.jar';
+    $jarfile = 'SSMPPTest.jar';
     $dir = "$pwd/javafiles/";
     echo "$jarfile<br>";
     #$cmd = "cd \"$dir\" && java -jar $jarfile \"$ip\" \"$username\" \"$passwd\" \"$port\"";
@@ -37,9 +37,9 @@ function test_smpp($ip,$port,$username,$passwd) {
     return $result['result'];
     #now check the db for outcome of the test
     /*
-    var_dump($output);
-    $result = shell_exec($cmd);
-    echo "$result<br>";
+      var_dump($output);
+      $result = shell_exec($cmd);
+      echo "$result<br>";
      * 
      */
 }
@@ -56,26 +56,66 @@ function get_user($username) {
     return $one;
 }
 
-function is_user($pwd,$user = 'admin') {
-    $result = R::getRow('select count(id) num from users where username=? and passwd=? limit 1',
-            array($user,$pwd));
+function is_user($pwd, $user = 'admin') {
+    $result = R::getRow('select count(id) num from users where username=? and passwd=? limit 1', array($user, $pwd));
     $val = $result['num'];
-    return ($val=='1');
+    return ($val == '1');
 }
 
 ################# Plugins ####################
-function get_plugins() {
-     return R::getAll( 'select * from plugin' );
 
+function get_plugins() {
+    return R::getAll('select * from plugin');
 }
-function add_plugin(){
-    
+
+function add_plugin() {
+    $plugin = R::dispense('plugin');
+    $plugin->name = $_REQUEST['name'];
+    $plugin->dbtype = $_REQUEST['type'];
+    $plugin->host = $_REQUEST['ip'];
+    $plugin->pwd = $_REQUEST['pwd'];
+    $plugin->username = $_REQUEST['username'];
+    $plugin->port = $_REQUEST['port'];
+    $plugin->sql_query = $_REQUEST['sql_query'];
+    $plugin->update_sql = $_REQUEST['update_sql'];
+    $plugin->senderid_col = $_REQUEST['sender'];
+    $plugin->msg_col = $_REQUEST['msg'];
+    $plugin->id_col = $_REQUEST['cid'];
+    $plugin->msisdn_col = $_REQUEST['receiver'];
+    $plugin->status = '0';
+    $plugin->user = 'admin';
+    $pid = R::store($plugin) or die('Failure');
+    return 'Success';
 }
-function update_plugin(){
-    
+
+function update_plugin() {
+    try{
+    R::exec("update plugin set name=?,dbtype=?,host=?,pwd=?,username=?,sql_query=?,update_sql=?,"
+            ."senderid_col=?,msg_col=?,msisdn_col=?,id_col=?,status=?,user=? where id=?",array(
+                $_REQUEST['name'],
+                $_REQUEST['type'],
+                $_REQUEST['ip'],
+                $_REQUEST['pwd'],
+                $_REQUEST['username'],
+                $_REQUEST['sql_query'],
+                $_REQUEST['update_sql'],
+                $_REQUEST['sender'],
+                $_REQUEST['msg'],
+                $_REQUEST['receiver'],
+                $_REQUEST['cid'],
+                $_REQUEST['status'],
+                'admin',
+                $_REQUEST['id']
+            ));
+    return 'Success';
+    }
+    catch(Exception $ex){
+        return 'Failure';
+    }
 }
-function get_plugin($id){
-    return R::getRow('select * from plugin where id = ? limit 1',array($id));
+
+function get_plugin($id) {
+    return R::getRow('select * from plugin where id = ? limit 1', array($id));
 }
 ?>
 
