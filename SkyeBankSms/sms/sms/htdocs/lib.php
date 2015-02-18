@@ -65,7 +65,7 @@ function is_user($pwd, $user = 'admin') {
 ################# Plugins ####################
 
 function get_plugins() {
-    return R::getAll('select * from plugin');
+    return R::getAll('select * from plugin order by id desc');
 }
 
 function add_plugin() {
