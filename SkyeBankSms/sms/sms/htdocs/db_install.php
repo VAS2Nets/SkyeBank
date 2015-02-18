@@ -14,7 +14,6 @@ echo 'Done<br>';
 echo "User created ($id)<br>";
 echo 'Emptying SMPP settings...<br>';
 R::wipe( 'smpp_setting' );
-R::wipe( 'smpp_setting' );
 echo "Recreating SMPP settings..<br>";
 $smpp = R::dispense('smpp_setting');
 $smpp->host = '192.168.1.154';
@@ -35,15 +34,22 @@ $plugin->pwd = 'password';
 $plugin->username='default';
 $plugin->port='3306';
 $plugin->sql_query="Select * from accounts where status='send'";
-$plugin->username="update account set status='sent' where id=$id";
+$plugin->update_sql="update account set status='sent' where id=$id";
 $plugin->senderid_col='sender';
 $plugin->msg_col='msg';
 $plugin->id_col='id';
 $plugin->msisdn_col='receiver';
 $plugin->status='0';
-$plugin->user_id=$user_id;
+$plugin->user='admin';
 $pid = R::store($plugin);
 echo "Default Plugin added ($pid)<br>";
+echo "Setting up SMPP test Repository....<br>";
+# a table to log result of SMPP test
+R::wipe('smpp_test');
+$smpp_test = R::dispense('smpp_test');
+$smpp_test->result = 'Failure';
+$tid = R::store($smpp_test);
+echo "Done ($tid)<br>";
 echo "Database Install complete";
 
 
