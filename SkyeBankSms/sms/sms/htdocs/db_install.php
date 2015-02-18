@@ -41,6 +41,7 @@ $plugin->id_col='id';
 $plugin->msisdn_col='receiver';
 $plugin->status='0';
 $plugin->user='admin';
+##
 $pid = R::store($plugin);
 echo "Default Plugin added ($pid)<br>";
 echo "Setting up SMPP test Repository....<br>";
