@@ -17,7 +17,7 @@ R::wipe( 'smpp_setting' );
 R::wipe( 'smpp_setting' );
 echo "Recreating SMPP settings..<br>";
 $smpp = R::dispense('smpp_setting');
-$smpp->host = '197.253.10.25';
+$smpp->host = '192.168.1.154';
 $smpp->port = '2775';
 $smpp->username = 'kannel2';
 $smpp->password = '12345';
