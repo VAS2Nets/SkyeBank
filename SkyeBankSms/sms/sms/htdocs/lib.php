@@ -118,4 +118,3 @@ function get_plugin($id) {
     return R::getRow('select * from plugin where id = ? limit 1', array($id));
 }
 ?>
-

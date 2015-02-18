@@ -125,7 +125,8 @@
     }
 </script>
 <div style="width:80%;margin-left: 6%;"> 
-    <form name = "tstmsg" id="tstmsg" method="post" action="" onsubmit="return(validate());" >
+    <p><?php echo $_REQUEST['flash']; ?></p>
+    <form name = "tstmsg" id="tstmsg" method="post" action="controller.php?action=testsms&redirect=tstmsg.php" onsubmit="return(validate());" >
         <div class="form-group">
             <label style="float:left;">Sender ID:</label>
             <input class="form-control" placeholder="Enter sender id" name="sender_id" style="margin-left:15%;width:65%;">
