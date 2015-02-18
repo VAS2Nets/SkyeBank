@@ -17,7 +17,7 @@ include_once 'lib.php';
 #var_dump(get_plugin('6'));
 #echo(is_user('admin'));
 #if(is_user('admin2')) echo 'Validated';
-echo test_smpp();
+echo test_smpp('197.253.10.25','2755','kannel2','12345');
 
 ?>
 
