@@ -25,10 +25,11 @@ function get_smpp() {
 
 function test_smpp($ip,$port,$username,$passwd) {
     $pwd = getcwd();
-    $jarfile='SkyeBankSMPPTest.jar';
+    $jarfile='SSMPPTest.jar';
     $dir = "$pwd/javafiles/";
     echo "$jarfile<br>";
-    $cmd = "cd \"$dir\" && java -jar $jarfile \"$ip\" \"$username\" \"$passwd\" \"$port\"";
+    #$cmd = "cd \"$dir\" && java -jar $jarfile \"$ip\" \"$username\" \"$passwd\" \"$port\"";
+    $cmd = "java -jar SSMPPTest.jar $ip $username $passwd $port";
     echo "$cmd<br>";
     exec("$cmd", $output);
     sleep(1);
