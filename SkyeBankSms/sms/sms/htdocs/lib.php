@@ -23,17 +23,24 @@ function get_smpp() {
 
 
 
-function test_smpp() {
+function test_smpp($ip,$port,$username,$passwd) {
     $pwd = getcwd();
     $jarfile='SkyeBankSMPPTest.jar';
     $dir = "$pwd/javafiles/";
     echo "$jarfile<br>";
-    $cmd = "cd \"$dir\" && java -jar $jarfile \"192.168.1.154\" \"kannel2\" \"12345\" \"2775\"";
+    $cmd = "cd \"$dir\" && java -jar $jarfile \"$ip\" \"$username\" \"$passwd\" \"$port\"";
     echo "$cmd<br>";
     exec("$cmd", $output);
+    sleep(1);
+    $result = R::getRow('select result from smpp_test limit 1');
+    return $result['result'];
+    #now check the db for outcome of the test
+    /*
     var_dump($output);
     $result = shell_exec($cmd);
     echo "$result<br>";
+     * 
+     */
 }
 
 ################# Users ####################
