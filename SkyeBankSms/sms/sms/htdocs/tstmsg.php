@@ -1,4 +1,9 @@
 
+<?php
+
+include_once 'lib.php';
+//$rec = get_smpp();
+?>
 <title>Skye Bank Dashboard</title>
 <!-- including the css file -->
  <?php include_once 'css.php'; ?>
@@ -56,7 +61,7 @@
             <textarea class="form-control" rows="3" name="message" style="margin-left:15%;width:65%;"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default" onsubmit="return(validate());">Submit</button>
 
                  </form>
             </div>

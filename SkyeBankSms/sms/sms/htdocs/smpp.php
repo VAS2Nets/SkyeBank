@@ -1,10 +1,19 @@
 <?php
-
 include_once 'lib.php';
-$rec = get_smpp();
-#var_dump($rec);
+$rec = update_smpp($host, $port, $username, $pwd);
+
+if (isset($_POST['sub'])) {
+    $host = $_POST['host'];
+    $port = $_POST['port'];
+    $username = $_POST['username'];
+    $pwd = $_POST['pwd'];
+    echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
+} else {
+    echo "<script type='text/javascript'>alert('submission failed!')</script>";
+}
 ?>
-<title>Skye Bank Dashboard</title>
+
+   <title>Skye Bank Dashboard</title>
 <!-- including the css file -->
  <?php include_once 'css.php'; ?>
 <div id="wrapper">
@@ -48,37 +57,37 @@ $rec = get_smpp();
             document.smpp.pass.focus();
             return false;
         }
+        //document.getElementById("smpp").submit();
         return(true);
     }
 </script>
 <div style="width:80%;margin-left: 6%;"> 
-    <form name ="smpp" id="smpp" method="post" action="" onsubmit="return(validate());" >
+    <div><p><?php echo $_REQUEST['flash']; ?></p></div>
+     <form name ="smpp" id="smpp" method="post" action="" onsubmit="return(validate());" >
         <div class="form-group">
             <label style="float:left;">IP:</label>
-            <input class="form-control" placeholder="Enter IP" name="ip" style="margin-left:15%;width:65%;">
+            <input class="form-control" placeholder="<?php echo $rec['ip'] ?>" name="ip" style="margin-left:15%;width:65%;">
         </div>
         <div class="form-group">
             <label style="float:left;">Port:</label>
-            <input class="form-control" placeholder="Enter Port No" name="port" style="margin-left:15%;width:65%;">
+            <input class="form-control" placeholder="<?php echo $rec['port'] ?>" name="port" style="margin-left:15%;width:65%;">
         </div>
         <div class="form-group">
             <label style="float:left;">Username:</label>
-            <input class="form-control" placeholder="<?php echo $rec['username'] ?>" name="uname" style="margin-left:15%;width:65%;">
+            <input class="form-control" placeholder="<?php echo $rec['username'] ?>" name="username" style="margin-left:15%;width:65%;">
         </div>
         <div class="form-group">
             <label style="float:left;">Password:</label>
-            <input class="form-control" placeholder="Enter password" name="pass" type="password" value="" style="margin-left:15%;width:65%;">
+            <input class="form-control" placeholder="<?php echo $rec['pwd'] ?>" name="pwd" type="password" value="" style="margin-left:15%;width:65%;">
         </div>
-        <button type="submit" class="btn btn-default" style="width:20%;background:#2c4762;color:#fff;" name="add">Save</button>
-       <button type="submit" class="btn btn-default" style="width:20%;background: #08C;color:#fff;" >Test</button>
+        <button type="submit" id="sub" class="btn btn-default" style="width:20%;background:#2c4762;color:#fff;" name="add">Save</button>
+        <button type="submit"  id="test" class="btn btn-default" style="width:20%;background: #08C;color:#fff;" >Test</button>
 
-    </form>
-                        </div>
+     </form>
+</div>
         </div>
-        
-        <!-- /#page-wrapper -->
 
-    </div>
-   <!-- JS files -->
+</div>
+<!-- JS files -->
 <?php include_once 'js.php'; ?>
- <?php include_once 'footer.php'; ?>
+<?php include_once 'footer.php'; ?>

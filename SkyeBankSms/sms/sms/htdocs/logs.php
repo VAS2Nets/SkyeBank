@@ -15,21 +15,13 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-        <?php
-        $file = fopen("logs.txt", "r");
-        echo fgets($file);
-        fclose($file);
-        ?>
-        <br />
-        <?php
-        $file = fopen("logs.txt", "r");
-
-        while (!feof($file)) {
-            echo fgets($file) . "<br />";
+               <?php
+        $file = file("logs.txt");
+        for ($i = count($file) - 6; $i < count($file); $i++) {
+            echo $file[$i] . "\n";
+            echo '<br />';
         }
-
-        fclose($file);
-        ?> 
+        ?>
     </div>
 
     <!-- /#page-wrapper -->

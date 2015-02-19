@@ -1,4 +1,8 @@
 <?php
+
+
+include_once 'lib.php';
+$rec = get_smpp();
 // Connect to MySQL
 
 

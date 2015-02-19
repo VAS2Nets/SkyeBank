@@ -102,7 +102,8 @@
     }
 </script>
                     <div style="width:45%;margin-left: 2%;float:left;"> 
-                            <form name ="addplugin" id="addplugin" method="post" action="" onsubmit="return(validate());" >
+                         <p><?php echo $_REQUEST['flash']; ?></p>
+                            <form name ="addplugin" id="addplugin" method="post" action="controller.php?action=addplugin&redirect=addplugin.php" onsubmit="return(validate());" >
                                 <div class="form-group">
                                     <div style="float: left;">    <label>Name:</label></div>
                                     <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter name" size="35" name="name">

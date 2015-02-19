@@ -11,12 +11,12 @@ function restart_engine() {
 }
 
 ################# SMPP ####################
-
 function update_smpp($host, $port, $username, $pwd) {
     R::exec("update smpp_setting set host=?,port=?,username=?,password=?", array($host, $port, $username, $pwd))
             or die('failure');
     return 'success';
 }
+
 
 function get_smpp() {
     $one = R::getRow('select * from smpp_setting where 1 ORDER BY id LIMIT 1');
