@@ -1,26 +1,25 @@
 <?php
 include_once 'lib.php';
 $rec = get_smpp();
-
 ?>
 
-   <title>Skye Bank Dashboard</title>
+<title>Skye Bank Dashboard</title>
 <!-- including the css file -->
- <?php include_once 'css.php'; ?>
+<?php include_once 'css.php'; ?>
 <div id="wrapper">
 
-        <!-- Navigation -->
-        <?php include_once 'nav.php'; ?>
-        <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">SMPP Connection</h1>
-                </div>
-                <!-- /.col-lg-12 -->
+    <!-- Navigation -->
+    <?php include_once 'nav.php'; ?>
+    <!-- Page Content -->
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">SMPP Connection</h1>
             </div>
-            <!-- /.row -->
-          <script type="text/javascript">
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <script type="text/javascript">
 
     function validate()
     {
