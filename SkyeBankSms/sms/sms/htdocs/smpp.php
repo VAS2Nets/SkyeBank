@@ -1,6 +1,7 @@
 <?php
 include_once 'lib.php';
 $rec = get_smpp();
+
 ?>
 
    <title>Skye Bank Dashboard</title>
@@ -51,9 +52,10 @@ $rec = get_smpp();
         return(true);
     }
 </script>
+
 <div style="width:80%;margin-left: 6%;border: 1px solid #ccc;"> 
-    <div><p><?php echo $_REQUEST['flash']; ?></p></div>
-    <form name ="smpp" id="smpp" method="post" style="margin-left: 10%;margin-top:5%;" action="smppprocess.php?&redirect=smpp.php" onsubmit="return(validate());" >
+    <p align="center" style="color:#398439;margin-top: 3%;line-height:1em;"><?php echo $_REQUEST['flash']; ?></p>
+    <form name ="smpp" id="smpp" method="post" style="margin-left: 10%;margin-top:5%;" action="controller.php?action=update_smpp&redirect=smpp.php" onsubmit="return(validate());" >
         <div class="form-group">
             <label style="float:left;">IP:</label>
             <input class="form-control" placeholder="<?php echo $rec['ip'] ?>" name="ip" style="margin-left:15%;width:65%;">

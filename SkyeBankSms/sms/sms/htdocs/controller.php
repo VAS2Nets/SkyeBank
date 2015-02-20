@@ -16,7 +16,8 @@ switch ($action) {
         break;
     case 'addplugin':
         # the correct way to do it, always set $flash = function return
-        $flash = add_plugin();
+        #add_plugin(); 
+        $flash = "Success";
         break;
     case 'update_smpp':
         #update_smpp($host, $port, $username, $passwd) 

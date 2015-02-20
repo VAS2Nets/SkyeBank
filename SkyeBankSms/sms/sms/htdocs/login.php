@@ -1,60 +1,73 @@
 <?php
+include_once('lib.php');
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
-    <title>Login Page- Skye Bank</title>
+	session_start(); 
+               $error = 0;
+            if (isset($_POST['login'])) {
+                
+                $password = $_POST['pwd'];
+                $_SESSION['currUser'] = '$username';
+                $user_id = is_user($pwd, $user = 'admin');
+                $query = get_user($username);
+                if (mysql_num_rows($query) > 0) {
+                    if ($user_id == "admin") {
+                        $_SESSION['login'] = 1;
+                        header('Location:index.php');
+                    }
+                } else {
+                    $error = 1;
+                }
+            }
+            ?>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+<title>Login Page- Skye Bank</title>
 
-    <!-- MetisMenu CSS -->
-    <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+<?php include_once 'css.php'; ?>
 
-    <!-- Custom CSS -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <!--<h3 class="panel-title">Please Sign In</h3> -->
+                    <img src="img/skyebank.png" alt="skye"/>
+                </div>
+                <script type="text/javascript">
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+                    function validate()
+                    {
+                        if (document.login.pwd.value == "")
+                        {
+                            alert("Please enter your password");
+                            document.login.pwd.focus();
+                            return false;
+                        }
 
- 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <!--<h3 class="panel-title">Please Sign In</h3> -->
-                        <img src="img/skyebank.png" alt="skye"/>
-                    </div>
-                    <div class="panel-body">
-                        <form role="form">
-                            <fieldset>
-                               <!-- <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
-                                </div> -->
-                                  <div class="form-group" align="center">
-                                      <label>Administrator</label> 
-                                </div>
-                                <div class="form-group">
-                                    <label style="float:left;">Password:</label>  <input class="form-control" placeholder="Password" name="password" type="password" value="" style="width:60%;float:left;margin-left:15%;">
-                                </div>
-                               <br /><br />
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
-                                </div>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.php" class="btn btn-lg btn-success btn-block">Login</a>
-                            </fieldset>
-                        </form>
-                    </div>
+                        return(true);
+                    }
+                </script>
+                <div class="panel-body">
+                    <form role="form" name="login" id="login" method="post" action="controller.php?action=is_user&redirect=index.php" onsubmit="return(validate());" >
+                        <fieldset>
+                            <!-- <div class="form-group">
+                                 <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                             </div> -->
+                            <div class="form-group" align="center">
+                                <label>Administrator</label> 
+                            </div>
+                            <div class="form-group">
+                                <label style="float:left;">Password:</label>  
+                                <input class="form-control" placeholder="Password" name="pwd" type="password" value="" style="width:60%;float:left;margin-left:15%;">
+                            </div>
+                            <br /><br /><p></p>
+                          <!-- Change this to a button or input when using this as a form -->
+                            <button class="btn btn-lg btn-success btn-block">Login</button>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 <?php include_once 'js.php'; ?>
- <?php include_once 'footer.php'; ?>
+<?php include_once 'footer.php'; ?>
