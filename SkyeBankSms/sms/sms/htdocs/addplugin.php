@@ -103,9 +103,8 @@ $rec = add_plugin();
         return(true);
     }
 </script>
-<div style="border: 1px solid #ccc;">                   
-<div style="width:45%;margin-left: 2%;float:left;"> 
-    <div style="border: 1px solid #000;color: #2b542c;" >  <p><?php echo $_REQUEST['flash']; ?></p></div>
+                  <div style="width:45%;margin-left: 2%;float:left;"> 
+    <p align="center" style="color:#398439;margin-top: 3%;line-height:1em;"><?php echo $_REQUEST['flash']; ?></p>
                            <form name ="addplugin" id="addplugin" method="post" action="controller.php?action=addplugin&redirect=addplugin.php" onsubmit="return(validate());" > 
                            <div class="form-group">
                                     <div style="float: left;">    <label>Name:</label></div>
@@ -197,8 +196,6 @@ $rec = add_plugin();
                         </form>
                         <p></p>
                     </div>
-                </div>
-
             </div>
         </div>
 

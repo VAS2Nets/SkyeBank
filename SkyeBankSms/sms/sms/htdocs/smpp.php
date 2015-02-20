@@ -35,16 +35,16 @@ $rec = get_smpp();
             document.smpp.port.focus();
             return false;
         }
-        if (document.smpp.uname.value == "")
+        if (document.smpp.username.value == "")
         {
             alert("Please provide your Username");
-            document.smpp.uname.focus();
+            document.smpp.username.focus();
             return false;
         }
-        if (document.smpp.pass.value == "")
+        if (document.smpp.pwd.value == "")
         {
             alert("Please provide your Password");
-            document.smpp.pass.focus();
+            document.smpp.pwd.focus();
             return false;
         }
         //document.getElementById("smpp").submit();
