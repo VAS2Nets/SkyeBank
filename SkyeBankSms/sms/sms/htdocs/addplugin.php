@@ -4,8 +4,8 @@ include_once 'lib.php';
 $rec = add_plugin();
 ?>
 <title>Skye Bank Dashboard</title>
-<!-- including the css file -->
- <?php include_once 'css.php'; ?>
+
+ <?php  include_once 'css.php'; ?>
 <div id="wrapper">
 
      <!-- Navigation -->
