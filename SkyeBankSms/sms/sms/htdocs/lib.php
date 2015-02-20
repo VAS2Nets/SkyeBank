@@ -33,7 +33,7 @@ function test_smpp($ip, $port, $username, $passwd) {
     #$cmd = "java -jar SSMPPTest.jar $ip $username $passwd $port";
     #echo "$cmd<br>";
     $output = shell_exec($cmd);
-    echo $output;
+    #echo $output;
     #exec("$cmd", $output);
     sleep(1);
     $result = R::getRow('select result from smpp_test limit 1');
