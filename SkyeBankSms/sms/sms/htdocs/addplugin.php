@@ -1,15 +1,9 @@
-
 <?php
 include_once 'lib.php';
 $rec = add_plugin();
 ?>
 <title>Skye Bank Dashboard</title>
-
-
- <?php  include_once 'css.php'; ?>
-
- <?php include_once 'css.php'; ?>
-
+<?php  include_once 'css.php'; ?>
 <div id="wrapper">
 
      <!-- Navigation -->
@@ -194,7 +188,7 @@ $rec = add_plugin();
                                 <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter receiver column" size="25" name="receiver">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
-                            <div style="clear: both;"></div><p></p>
+                            
                             <div class="form-group">
                                 <div style="float: left;"> <label>What column is Row ID:</label></div>
                                 <div style="margin-left: 1%;float:right;"><input class="form-control" placeholder="Enter row id Column" size="25" name="cid">
@@ -225,4 +219,3 @@ $rec = add_plugin();
     $("[data-toggle=popover]")
             .popover()
 </script>
-
