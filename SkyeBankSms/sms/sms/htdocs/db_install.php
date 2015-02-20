@@ -26,6 +26,7 @@ $sid = R::store($smpp);
 echo "SMPP settings created ($sid)<br>";
 echo "Adding default plugin<br>";
 R::exec("delete from plugin where name='default'");
+/*
 $plugin = R::dispense('plugin');
 $plugin->name='default';
 $plugin->dbtype='mysql';
@@ -43,6 +44,8 @@ $plugin->status='0';
 $plugin->user='admin';
 ##
 $pid = R::store($plugin);
+ * 
+ */
 $plugin2 = R::dispense('plugin');
 $plugin2->name='mysql2';
 $plugin2->dbtype='mysql';
