@@ -107,9 +107,8 @@ $rec = add_plugin();
 </script>
 <div style="border: 1px solid #ccc;">                   
 <div style="width:45%;margin-left: 2%;float:left;"> 
-                         <p><?php echo $_REQUEST['flash']; ?></p>
-                           <!-- <form name ="addplugin" id="addplugin" method="post" action="controller.php?action=addplugin&redirect=addplugin.php" onsubmit="return(validate());" > -->
-                           <form name ="addplugin" id="addplugin" method="post" action="addpluginprocess.php?&redirect=addplugin.php" onsubmit="return(validate());" >     
+    <div style="border: 1px solid #000;color: #2b542c;" >  <p><?php echo $_REQUEST['flash']; ?></p></div>
+                           <form name ="addplugin" id="addplugin" method="post" action="controller.php?action=addplugin&redirect=addplugin.php" onsubmit="return(validate());" > 
                            <div class="form-group">
                                     <div style="float: left;">    <label>Name:</label></div>
                                     <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="<?php echo $rec['name'] ?>" size="35" name="name">
