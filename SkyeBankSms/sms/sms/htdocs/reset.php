@@ -1,6 +1,4 @@
 <?php
-
-
 include_once 'lib.php';
 $rec = get_smpp();
 ?>
@@ -22,18 +20,19 @@ $rec = get_smpp();
         </div>
         <!-- /.row -->
         <script type="text/javascript">
-function pvalidate() {
-if (document.reset.npass.value != document.reset.cnpass.value)
-            {
-                alert('Passwords did not match!');
-                return false;
-            }
-            else
+            function pvalidate() {
+                if (document.reset.npass.value != document.reset.cnpass.value)
                 {
-document.reset.submit();
- alert('Passwords has been changed Successfully!');
-return true;
-}}
+                    alert('Passwords did not match!');
+                    return false;
+                }
+                else
+                {
+                    document.reset.submit();
+                    alert('Passwords has been changed Successfully!');
+                    return true;
+                }
+            }
         </script>
         <div style="width:80%;margin-left: 6%;border: 1px solid #ccc;"> 
             <form name = "reset" id="reset" style="margin-left: 10%;margin-top:5%;" method="post" action="controller.php?action=change_password&redirect=login.php" onsubmit="return(validate());" >
@@ -55,4 +54,4 @@ return true;
 </div>
 <!-- JS files -->
 <?php include_once 'js.php'; ?>
- <?php include_once 'footer.php'; ?>
+<?php include_once 'footer.php'; ?>

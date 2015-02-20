@@ -5,11 +5,11 @@ $rec = add_plugin();
 ?>
 <title>Skye Bank Dashboard</title>
 
-<<<<<<< HEAD
+
  <?php  include_once 'css.php'; ?>
-=======
+
  <?php include_once 'css.php'; ?>
->>>>>>> FETCH_HEAD
+
 <div id="wrapper">
 
      <!-- Navigation -->
