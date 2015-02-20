@@ -1,6 +1,7 @@
 <?php
 include_once 'lib.php';
 //$rec = get_smpp();
+$redirect=$_REQUEST['redirect'];
 
 if (isset($_POST['sub'])) {
     $host = $_POST['host'];
@@ -15,3 +16,4 @@ if (isset($_POST['sub'])) {
     echo "<script type='text/javascript'>alert('submission failed!')</script>";
 }
 ?>
+

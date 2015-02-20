@@ -1,5 +1,6 @@
 <?php
 include_once 'lib.php';
+$rec = get_smpp();
 ?>
 
    <title>Skye Bank Dashboard</title>
@@ -50,9 +51,9 @@ include_once 'lib.php';
         return(true);
     }
 </script>
-<div style="width:80%;margin-left: 6%;"> 
+<div style="width:80%;margin-left: 6%;border: 1px solid #ccc;"> 
     <div><p><?php echo $_REQUEST['flash']; ?></p></div>
-    <form name ="smpp" id="smpp" method="post" action="smppprocess.php" onsubmit="return(validate());" >
+    <form name ="smpp" id="smpp" method="post" style="margin-left: 10%;margin-top:5%;" action="smppprocess.php?&redirect=smpp.php" onsubmit="return(validate());" >
         <div class="form-group">
             <label style="float:left;">IP:</label>
             <input class="form-control" placeholder="<?php echo $rec['ip'] ?>" name="ip" style="margin-left:15%;width:65%;">
@@ -70,7 +71,7 @@ include_once 'lib.php';
             <input class="form-control" placeholder="<?php echo $rec['pwd'] ?>" name="pwd" type="password" value="" style="margin-left:15%;width:65%;">
         </div>
         <button type="submit" id="sub" class="btn btn-default" style="width:20%;background:#2c4762;color:#fff;" name="sub">Save</button>
-        <button type="submit"  id="test" class="btn btn-default" style="width:20%;background: #08C;color:#fff;" >Test</button>
+        <button type="submit"  id="test" class="btn btn-default" style="width:20%;background: #08C;color:#fff;"  name="test">Test</button>
 
      </form>
 </div>

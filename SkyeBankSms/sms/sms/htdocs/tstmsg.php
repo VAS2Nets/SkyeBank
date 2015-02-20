@@ -11,7 +11,7 @@ include_once 'lib.php';
 
         <!-- Navigation -->
        <?php include_once 'nav.php'; ?>
-         <div id="page-wrapper">
+        <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Test Message</h1>
@@ -45,9 +45,9 @@ include_once 'lib.php';
         return(true);
     }
 </script>
-<div style="width:80%;margin-left: 6%;"> 
+<div style="width:80%;margin-left: 6%;border: 1px solid #ccc;"> 
     <p><?php echo $_REQUEST['flash']; ?></p>
-    <form name = "tstmsg" id="tstmsg" method="post" action="controller.php?action=testsms&redirect=tstmsg.php" onsubmit="return(validate());" >
+    <form name = "tstmsg" id="tstmsg" style="margin-left: 10%;margin-top:5%;" method="post" action="controller.php?action=testsms&redirect=tstmsg.php" onsubmit="return(validate());" >
         <div class="form-group">
             <label style="float:left;">Sender ID:</label>
             <input class="form-control" placeholder="Enter sender id" name="sender_id" style="margin-left:15%;width:65%;">

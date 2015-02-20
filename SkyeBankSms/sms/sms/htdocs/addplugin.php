@@ -1,4 +1,8 @@
 
+<?php
+include_once 'lib.php';
+$rec = add_plugin();
+?>
 <title>Skye Bank Dashboard</title>
 <!-- including the css file -->
  <?php include_once 'css.php'; ?>
@@ -101,12 +105,14 @@
         return(true);
     }
 </script>
-                    <div style="width:45%;margin-left: 2%;float:left;"> 
+<div style="border: 1px solid #ccc;">                   
+<div style="width:45%;margin-left: 2%;float:left;"> 
                          <p><?php echo $_REQUEST['flash']; ?></p>
-                            <form name ="addplugin" id="addplugin" method="post" action="controller.php?action=addplugin&redirect=addplugin.php" onsubmit="return(validate());" >
-                                <div class="form-group">
+                           <!-- <form name ="addplugin" id="addplugin" method="post" action="controller.php?action=addplugin&redirect=addplugin.php" onsubmit="return(validate());" > -->
+                           <form name ="addplugin" id="addplugin" method="post" action="addpluginprocess.php?&redirect=addplugin.php" onsubmit="return(validate());" >     
+                           <div class="form-group">
                                     <div style="float: left;">    <label>Name:</label></div>
-                                    <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter name" size="35" name="name">
+                                    <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="<?php echo $rec['name'] ?>" size="35" name="name">
                                     </div>
                                 </div>
                             <div style="clear: both;"></div><p></p>
@@ -124,42 +130,47 @@
                             <div class="form-group">
 
                                 <div style="float: left;"> <label>Database Name:</label> </div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter database name" size="35" name="dbname">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="<?php echo $rec['dbname'] ?>" size="35" name="dbname">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
 
                             <div class="form-group">
                                 <div style="float: left;"><label>Host/IP:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter host" size="35" name="ip">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="<?php echo $rec['ip'] ?>" size="35" name="ip">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
                             <div class="form-group">
                                 <div style="float: left;"><label>Port:</label></div>
-                                <div style="margin-left: 1%;float:right;">    <input class="form-control" placeholder="Enter Port number" size="35" name="port">
+                                <div style="margin-left: 1%;float:right;">    <input class="form-control" placeholder="<?php echo $rec['port'] ?>" size="35" name="port">
                                 </div></div>
                             <div style="clear: both;"></div><p></p><div class="form-group">
                                 <div style="float: left;">  <label>Username:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter username" size="35" name="username">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="<?php echo $rec['username'] ?>" size="35" name="username">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
                             <div class="form-group">
                                 <div style="float: left;"><label>Password:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter password" type="password" size="35" name="pwd">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="<?php echo $rec['pwd'] ?>" type="password" size="35" name="pwd">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
 
                             <div class="form-group">
                                 <div style="float: left;">  <label>Sql Query:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <textarea class="form-control" rows="3" style="width:275px;height:100px;" name="sql_query"></textarea>
+                                <div style="margin-left: 1%;float:right;"> <textarea class="form-control" rows="3" style="width:275px;height:100px;" placeholder="<?php echo $rec['sql_query'] ?>" name="sql_query"></textarea>
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
                             <div class="form-group">
                                 <div style="float: left;">  <label>Update Query:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <textarea class="form-control" rows="3" style="width:275px;height:100px;" name="update_sql"></textarea>
+                                <div style="margin-left: 1%;float:right;"> <textarea class="form-control" rows="3" style="width:275px;height:100px;" placeholder="<?php echo $rec['update_sql'] ?>" name="update_sql"></textarea>
                                 </div></div>
                             <div style="clear: both;"></div><p></p><p></p>
-                            <button type="submit" class="btn btn-default" style="width:50%;background: #08C;color:#fff;">Save</button>
-                            <button type="submit" class="btn btn-default" style="width:48%;background:#2c4762;color:#fff;">Test Connection</button>
+                            <div class="form-group">
+                                <div style="float: left;"><label>Message:</label></div>
+                                <div style="margin-left: 1%;float:right;"><input class="form-control" placeholder="Enter message column" size="35" name="msg">
+                                </div></div>
+                             <div style="clear: both;"></div><p></p><p></p>
+                            <button type="submit" class="btn btn-default" style="width:50%;background: #08C;color:#fff;" name="sub">Save</button>
+                            <button type="submit" class="btn btn-default" style="width:48%;background:#2c4762;color:#fff;" name="test">Test Connection</button>
 
                        
                         <p></p>
@@ -180,11 +191,6 @@
                                 <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter receiver column" size="25" name="receiver">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
-
-                            <div class="form-group">
-                                <div style="float: left;"><label>What column is Message:</label></div>
-                                <div style="margin-left: 1%;float:right;"><input class="form-control" placeholder="Enter message column" size="25" name="msg">
-                                </div></div>
                             <div style="clear: both;"></div><p></p>
                             <div class="form-group">
                                 <div style="float: left;"> <label>What column is Row ID:</label></div>

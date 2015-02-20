@@ -6,12 +6,12 @@ $rec = get_smpp();
 // Connect to MySQL
 
 
-$password = md5(mysql_real_escape_string($_POST["npass"]));
+$newpassword = md5(mysql_real_escape_string($_POST["npass"]));
 $confirmpassword = md5(mysql_real_escape_string($_POST["cnpass"]));
 
-if ($password == $confirmpassword) {
+if ($newpassword == $confirmpassword) {
     // Update the user's password
-    $update = mysql_query("UPDATE `users` SET `pass` = '$password' WHERE `email` = '$email'");
+    $chpwd = change_password($newpassword, $username = 'admin');
     echo "<script type='text/javascript'>alert('Your password has been successfully reset.')</script>";
 } else {
     echo "<script type='text/javascript'>alert('Your password's do not match.')</script>";
@@ -38,35 +38,24 @@ if ($password == $confirmpassword) {
 
             function validate()
             {
-                if (document.smpp.ip.value == "")
-                {
-                    alert("Please provide your IP");
-                    document.smpp.ip.focus();
-                    return false;
-                }
-                if (document.smpp.port.value == "")
-                {
-                    alert("Please provide your Port No.");
-                    document.smpp.port.focus();
-                    return false;
-                }
-                if (document.smpp.uname.value == "")
-                {
-                    alert("Please provide your Username");
-                    document.smpp.uname.focus();
-                    return false;
-                }
-                if (document.smpp.pass.value == "")
+                
+                if (document.smpp.npass.value == "")
                 {
                     alert("Please provide your Password");
-                    document.smpp.pass.focus();
+                    document.smpp.npass.focus();
+                    return false;
+                }
+                if (document.smpp.cnpass.value == "")
+                {
+                    alert("Please confirm your Password");
+                    document.smpp.cnpass.focus();
                     return false;
                 }
                 return(true);
             }
         </script>
-        <div style="width:80%;margin-left: 6%;"> 
-            <form name = "smpp" id="tstmsg" method="post" action="" onsubmit="return(validate());" >
+        <div style="width:80%;margin-left: 6%;border: 1px solid #ccc;"> 
+            <form name = "smpp" id="tstmsg" style="margin-left: 10%;margin-top:5%;" method="post" action="" onsubmit="return(validate());" >
                 <div class="form-group">
                     <label style="float:left;">New Password:</label>
                     <input class="form-control" placeholder="Enter new password" name="npass" style="margin-left:30%;width:35%;">
