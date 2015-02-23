@@ -3,15 +3,15 @@ include_once('lib.php');
 
 	session_start(); 
                $error = 0;
-            if (isset($_POST['login'])) {
-                
+            if (isset($_POST['pwd'])) {
+                $username = 'admin';
                 $password = $_POST['pwd'];
                 $_SESSION['currUser'] = '$username';
                 $user_id = is_user($pwd, $user = 'admin');
                 $query = get_user($username);
                 if (mysql_num_rows($query) > 0) {
                     if ($user_id == "admin") {
-                        $_SESSION['login'] = 1;
+                        $_SESSION['pwd'] = 1;
                         header('Location:index.php');
                     }
                 } else {

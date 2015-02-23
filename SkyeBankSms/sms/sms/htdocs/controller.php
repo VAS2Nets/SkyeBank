@@ -11,20 +11,24 @@ $flash=null;
 
 switch ($action) {
     case 'testsms':
-        #test_smpp($ip, $port, $username, $passwd);
-        $flash=test_smpp($ip, $port, $username, $passwd);
+        $flash = test_sms();
+        //$flash = "Success";
         break;
     case 'addplugin':
         # the correct way to do it, always set $flash = function return
         #add_plugin(); 
         $flash = "Success";
         break;
+    case 'get_smpp':
+        #get_smpp(); 
+        $flash = "Success";
+        break;
     case 'update_smpp':
-        #update_smpp($host, $port, $username, $passwd) 
+        #update_smpp($host, $port, $username, $passwd); 
         $flash = "Success";
         break;
     case 'change_password':
-        #change_password($newpassword, $username)
+        #change_password($newpassword, $username);
         $flash="success";
         break;
     case'update_plugin':

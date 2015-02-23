@@ -108,7 +108,7 @@ $rec = add_plugin();
                            <form name ="addplugin" id="addplugin" method="post" action="controller.php?action=addplugin&redirect=addplugin.php" onsubmit="return(validate());" > 
                            <div class="form-group">
                                     <div style="float: left;">    <label>Name:</label></div>
-                                    <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="<?php echo $rec['name'] ?>" size="35" name="name">
+                                    <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Name" size="35" name="name">
                                     </div>
                                 </div>
                             <div style="clear: both;"></div><p></p>
@@ -126,38 +126,38 @@ $rec = add_plugin();
                             <div class="form-group">
 
                                 <div style="float: left;"> <label>Database Name:</label> </div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="<?php echo $rec['dbname'] ?>" size="35" name="dbname">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Database Name" size="35" name="dbname">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
 
                             <div class="form-group">
                                 <div style="float: left;"><label>Host/IP:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="<?php echo $rec['ip'] ?>" size="35" name="ip">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Host/IP" size="35" name="ip">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
                             <div class="form-group">
                                 <div style="float: left;"><label>Port:</label></div>
-                                <div style="margin-left: 1%;float:right;">    <input class="form-control" placeholder="<?php echo $rec['port'] ?>" size="35" name="port">
+                                <div style="margin-left: 1%;float:right;">    <input class="form-control" placeholder="Enter Port" size="35" name="port">
                                 </div></div>
                             <div style="clear: both;"></div><p></p><div class="form-group">
                                 <div style="float: left;">  <label>Username:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="<?php echo $rec['username'] ?>" size="35" name="username">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Username" size="35" name="username">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
                             <div class="form-group">
                                 <div style="float: left;"><label>Password:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="<?php echo $rec['pwd'] ?>" type="password" size="35" name="pwd">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Password" type="password" size="35" name="pwd">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
 
                             <div class="form-group">
                                 <div style="float: left;">  <label>Sql Query:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <textarea class="form-control" rows="3" style="width:275px;height:100px;" placeholder="<?php echo $rec['sql_query'] ?>" name="sql_query"></textarea>
+                                <div style="margin-left: 1%;float:right;"> <textarea class="form-control" rows="3" style="width:275px;height:100px;" placeholder="Enter SQL Query" name="sql_query"></textarea>
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
                             <div class="form-group">
                                 <div style="float: left;">  <label>Update Query:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <textarea class="form-control" rows="3" style="width:275px;height:100px;" placeholder="<?php echo $rec['update_sql'] ?>" name="update_sql"></textarea>
+                                <div style="margin-left: 1%;float:right;"> <textarea class="form-control" rows="3" style="width:275px;height:100px;" placeholder="Update SQL Squery" name="update_sql"></textarea>
                                 </div></div>
                             <div style="clear: both;"></div><p></p><p></p>
                             <div class="form-group">

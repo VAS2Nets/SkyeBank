@@ -1,4 +1,8 @@
-
+<?php
+include_once 'lib.php';
+$rec = get_plugins();
+var_dump($rec);
+?>
 <title>Skye Bank Dashboard</title>
 <!-- including the css file -->
  <?php include_once 'css.php'; ?>
@@ -6,6 +10,7 @@
 
         <!-- Navigation -->
         <?php include_once 'nav.php'; ?>
+       
      <!-- Page Content -->
     <div id="page-wrapper">
             <div class="row">

@@ -1,8 +1,8 @@
 
 <?php
-
 include_once 'lib.php';
-//$rec = get_smpp();
+$rec = test_sms();
+//var_dump($rec);
 ?>
 <title>Skye Bank Dashboard</title>
 <!-- including the css file -->
@@ -50,15 +50,15 @@ include_once 'lib.php';
     <form name = "tstmsg" id="tstmsg" style="margin-left: 10%;margin-top:5%;" method="post" action="controller.php?action=testsms&redirect=tstmsg.php" onsubmit="return(validate());" >
         <div class="form-group">
             <label style="float:left;">Sender ID:</label>
-            <input class="form-control" placeholder="Enter sender id" name="sender_id" style="margin-left:15%;width:65%;">
+            <input class="form-control" placeholder="Enter Sender id" name="sender" style="margin-left:15%;width:65%;">
         </div>
         <div class="form-group">
             <label style="float:left;">MSISDN:</label>
-            <input class="form-control" placeholder="Enter MSISDN" name="msisdn" style="margin-left:15%;width:65%;">
+            <input class="form-control" placeholder="Enter MSISDN" name="receiver" style="margin-left:15%;width:65%;">
         </div>
         <div class="form-group">
             <label style="float:left;">Message:</label>
-            <textarea class="form-control" rows="3" name="message" style="margin-left:15%;width:65%;"></textarea>
+            <textarea class="form-control" rows="3" placeholder="Enter Message" name="msg" style="margin-left:15%;width:65%;"></textarea>
         </div>
 
         <button type="submit" class="btn btn-default" onsubmit="return(validate());">Submit</button>
