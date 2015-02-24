@@ -26,13 +26,9 @@ include_once 'lib.php';
                         Plugin Form
                     </div>
                     <!-- /.panel-heading -->
-                    <script type="text/javascript">
-            function mog()
-            {
-            alert("<?PHP echo $tp ?>");}
-               </script>      
-                    <script type="text/javascript">
+                  
 
+    <script>
     function validate()
     {
       if (document.addplugin.name.value == "")
@@ -173,7 +169,7 @@ include_once 'lib.php';
                                 </div></div>
                              <div style="clear: both;"></div><p></p><p></p>
                             <button type="submit" class="btn btn-default" style="width:50%;background: #08C;color:#fff;" name="sub">Save</button>
-                            <button type="submit" class="btn btn-default" style="width:48%;background:#2c4762;color:#fff;" name="test" onclick="mog()">Test Connection</button>
+                            <button type="submit" class="btn btn-default" style="width:48%;background:#2c4762;color:#fff;" name="test">Test Connection</button>
 
                        
                         <p></p>
@@ -183,7 +179,7 @@ include_once 'lib.php';
                         
                             <div class="form-group">
                                 <div style="float: left;">    <label>What column is Sender ID:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Sender id column" size="25" name="senderid">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Sender id column" size="25" name="sender">
                                 </div>
                             </div>
                             <div style="clear: both;"></div><p></p>
