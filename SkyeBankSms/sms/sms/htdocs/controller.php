@@ -26,15 +26,15 @@ switch ($action) {
         #$flash = "Success";
         break;
     case 'get_smpp':
-        #get_smpp(); 
-        $flash = "Success";
+        $flash= get_smpp(); 
+        //$flash = "Success";
         break;
     case 'update_smpp':
-        #update_smpp($host, $port, $username, $passwd); 
+        #$flash =update_smpp($host, $port, $username, $passwd); 
         $flash = "Success";
         break;
     case 'change_password':
-        #change_password($newpassword, $username);
+        #$flash =change_password($newpassword, $username);
         $flash="success";
         break;
     case'update_plugin':
