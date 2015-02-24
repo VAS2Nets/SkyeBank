@@ -1,6 +1,8 @@
 <?php
 include_once 'lib.php';
-$rec = add_plugin();
+//$roc = add_plugin();
+//$testpl = test_plugin();
+//var_dump($testpl);
 ?>
 <title>Skye Bank Dashboard</title>
 <?php  include_once 'css.php'; ?>
@@ -24,7 +26,12 @@ $rec = add_plugin();
                         Plugin Form
                     </div>
                     <!-- /.panel-heading -->
-                           <script type="text/javascript">
+                    <script type="text/javascript">
+            function mog()
+            {
+            alert("<?PHP echo $tp ?>");}
+               </script>      
+                    <script type="text/javascript">
 
     function validate()
     {
@@ -166,7 +173,7 @@ $rec = add_plugin();
                                 </div></div>
                              <div style="clear: both;"></div><p></p><p></p>
                             <button type="submit" class="btn btn-default" style="width:50%;background: #08C;color:#fff;" name="sub">Save</button>
-                            <button type="submit" class="btn btn-default" style="width:48%;background:#2c4762;color:#fff;" name="test">Test Connection</button>
+                            <button type="submit" class="btn btn-default" style="width:48%;background:#2c4762;color:#fff;" name="test" onclick="mog()">Test Connection</button>
 
                        
                         <p></p>

@@ -16,8 +16,8 @@ switch ($action) {
         break;
     case 'addplugin':
         # the correct way to do it, always set $flash = function return
-        #add_plugin(); 
-        $flash = "Success";
+        $flash = add_plugin(); 
+        //$flash = "Success";
         break;
     case 'test_smpp':
         # the correct way to do it, always set $flash = function return

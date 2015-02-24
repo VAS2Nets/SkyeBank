@@ -7,6 +7,9 @@
     <!-- Navigation -->
     <?php include_once 'nav.php'; ?>
     <!-- Page Content -->
+    <script type="text/javascript">
+window.setTimeout(function(){ document.location.reload(true); }, 15000);
+</script>
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -15,7 +18,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-               <?php
+          <?php
         $file = file("logs.txt");
         for ($i = count($file) - 6; $i < count($file); $i++) {
             echo $file[$i] . "\n";

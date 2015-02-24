@@ -66,6 +66,7 @@ function add_plugin() {
     $plugin->dbtype = $_REQUEST['type'];
     $plugin->host = $_REQUEST['ip'];
     $plugin->pwd = $_REQUEST['pwd'];
+    $plugin->dbname = $_REQUEST['dbname'];
     $plugin->username = $_REQUEST['username'];
     $plugin->port = $_REQUEST['port'];
     $plugin->sql_query = $_REQUEST['sql_query'];
@@ -114,10 +115,8 @@ function test_plugin(){
     $host = $_REQUEST['host'];
     $username = $_REQUEST['username'];
     $password = $_REQUEST['password'];
-    
     $pwd = getcwd();
     $cmd = "\"$pwd\jdk\bin\java.exe\" -jar DBConnectionTest.jar $name $dbtype $databasename $port $host $username $password 2>&1";
-    
     $output = shell_exe($cmd);
     echo $output;
 }
