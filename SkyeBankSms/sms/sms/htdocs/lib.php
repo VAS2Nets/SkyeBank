@@ -116,10 +116,10 @@ function test_plugin(){
     $password = $_REQUEST['password'];
     
     $pwd = getcwd();
-    $cmd = "\"$pwd\jdk\bin\java.exe\" -jar DBConnectionTest.jar $name $dbtype $databasename $port $host $username $password";
+    $cmd = "\"$pwd\jdk\bin\java.exe\" -jar DBConnectionTest.jar $name $dbtype $databasename $port $host $username $password 2>&1";
     
     $output = shell_exe($cmd);
- 
+    echo $output;
 }
 
 function get_plugin($id) {
