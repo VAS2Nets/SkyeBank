@@ -107,6 +107,19 @@ function update_plugin() {
 
 function test_plugin(){
     
+    $name = $_REQUEST['name'];
+    $dbtype = $_REQUEST['dbtype'];
+    $databasename = $_REQUEST['databasename'];
+    $port = $_REQUEST['port'];
+    $host = $_REQUEST['host'];
+    $username = $_REQUEST['username'];
+    $password = $_REQUEST['password'];
+    
+    $pwd = getcwd();
+    $cmd = "\"$pwd\jdk\bin\java.exe\" -jar DBConnectionTest.jar $name $dbtype $databasename $port $host $username $password";
+    
+    $output = shell_exe($cmd);
+ 
 }
 
 function get_plugin($id) {
