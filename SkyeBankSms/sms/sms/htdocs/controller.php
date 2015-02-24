@@ -30,11 +30,11 @@ switch ($action) {
         //$flash = "Success";
         break;
     case 'update_smpp':
-        #$flash =update_smpp($host, $port, $username, $passwd); 
+        #update_smpp($host, $port, $username, $passwd); 
         $flash = "Success";
         break;
     case 'change_password':
-        #$flash =change_password($newpassword, $username);
+        #change_password($newpassword, $username);
         $flash="success";
         break;
     case'update_plugin':

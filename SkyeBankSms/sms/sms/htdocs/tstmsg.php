@@ -63,10 +63,10 @@ include_once 'lib.php';
 
         <button type="submit" class="btn btn-default" onsubmit="return(validate());">Submit</button>
 
-                 </form>
+       </form>
             </div>
       </div>
 </div>
 <!-- JS files -->
 <?php include_once 'js.php'; ?>
- <?php include_once 'footer.php'; ?>
+<?php include_once 'footer.php'; ?>

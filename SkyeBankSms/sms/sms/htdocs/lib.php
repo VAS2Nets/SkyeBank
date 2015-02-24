@@ -24,27 +24,16 @@ function get_smpp() {
 }
 
 function test_smpp($host, $port, $username, $passwd) {
+    
     $pwd = getcwd();
-    $jarfile = 'SSMPPTest.jar';
-    $dir = "$pwd/javafiles/";
-    #echo "$jarfile<br>";
-    #$cmd = "cd \"$dir\" && java -jar $jarfile \"$host\" \"$username\" \"$passwd\" \"$port\"";
-    $cmd = "\"C:\Users\samson ude\Documents\NetBeansProjects\SkyeBanksms\SkyeBankSms\sms\sms\htdocs\jdk\bin\java.exe\" -jar SSMPPTest.jar '192.168.1.154' 'kannel4' '12345' 2775 2>&1";
-    #$cmd = "java -jar SSMPPTest.jar $ip $username $passwd $port";
-    #echo "$cmd<br>";
+    
+    $cmd = "\"$pwd\jdk\bin\java.exe\"  -jar SSMPPTest.jar $host $username $passwd $port 2>&1";
+    
     $output = shell_exec($cmd);
-    #echo $output;
-    #exec("$cmd", $output);
     sleep(1);
     $result = R::getRow('select result from smpp_test limit 1');
     return $result['result'];
-    #now check the db for outcome of the test
-    /*
-      var_dump($output);
-      $result = shell_exec($cmd);
-      echo "$result<br>";
-     * 
-     */
+   
 }
 
 ################# Users ####################
@@ -127,12 +116,15 @@ function get_plugin($id) {
 ################# SMS Test ###################
 
 function test_sms() {
+    
+    $pwd = getcwd();
+    
     $sender = $_REQUEST['sender'];
     $receiver = $_REQUEST['receiver'];
     $msg = $_REQUEST['msg'];
-    $cmd = "java -jar SMSTest.jar \"$sender\" \"+$receiver\" \"$ms\"";
+    $cmd = "\"$pwd\jdk\bin\java.exe\" -jar SMSTest.jar $sender $receiver $msg";
     echo "$cmd<br>";
-    exec("$cmd", $output);
+    $output = shell_exec($cmd);
     return 'Success';
 }
 ?>
