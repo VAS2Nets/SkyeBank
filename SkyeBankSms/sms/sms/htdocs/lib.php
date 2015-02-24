@@ -23,12 +23,12 @@ function get_smpp() {
     return $one;
 }
 
-function test_smpp($ip, $port, $username, $passwd) {
+function test_smpp($host, $port, $username, $passwd) {
     $pwd = getcwd();
     $jarfile = 'SSMPPTest.jar';
     $dir = "$pwd/javafiles/";
     #echo "$jarfile<br>";
-    #$cmd = "cd \"$dir\" && java -jar $jarfile \"$ip\" \"$username\" \"$passwd\" \"$port\"";
+    #$cmd = "cd \"$dir\" && java -jar $jarfile \"$host\" \"$username\" \"$passwd\" \"$port\"";
     $cmd = "\"C:\Users\samson ude\Documents\NetBeansProjects\SkyeBanksms\SkyeBankSms\sms\sms\htdocs\jdk\bin\java.exe\" -jar SSMPPTest.jar '192.168.1.154' 'kannel4' '12345' 2775 2>&1";
     #$cmd = "java -jar SSMPPTest.jar $ip $username $passwd $port";
     #echo "$cmd<br>";

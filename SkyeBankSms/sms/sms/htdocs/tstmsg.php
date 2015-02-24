@@ -1,7 +1,7 @@
 
 <?php
 include_once 'lib.php';
-$rec = test_sms();
+//$rec = test_sms();
 //var_dump($rec);
 ?>
 <title>Skye Bank Dashboard</title>

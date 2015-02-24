@@ -19,6 +19,12 @@ switch ($action) {
         #add_plugin(); 
         $flash = "Success";
         break;
+    case 'test_smpp':
+        # the correct way to do it, always set $flash = function return
+        #add_plugin(); 
+        $flash = test_smpp($ip, $port, $username, $passwd);
+        #$flash = "Success";
+        break;
     case 'get_smpp':
         #get_smpp(); 
         $flash = "Success";
