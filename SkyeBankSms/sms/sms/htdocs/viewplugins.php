@@ -2,6 +2,8 @@
 include_once 'lib.php';
 $rec = get_plugins();
 //var_dump($rec);
+$id =$recs['id'];
+var_dump($id);
 ?>
 <title>Skye Bank Dashboard</title>
 <!-- including the css file -->
@@ -10,7 +12,13 @@ $rec = get_plugins();
 
         <!-- Navigation -->
         <?php include_once 'nav.php'; ?>
-       
+       <script>
+function myFunction(id) {
+    alert(id);
+        document.getElementById("plugin-table").deleteRow(0);
+   
+}
+</script>
      <!-- Page Content -->
     <div id="page-wrapper">
             <div class="row">
@@ -23,48 +31,33 @@ $rec = get_plugins();
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Plugins List
-                        </div>
+                       
                         <!-- /.panel-heading -->
-                        <div class="panel-body">
+                        <div>
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Type</th>
-                                            <th>DB</th>
-                                            <th>Host</th>
-                                            <th>Port</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">4</td>
-                                            <td class="center">X</td>
-                                        </tr>
-                                        <tr class="even gradeC">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">5</td>
-                                            <td class="center">C</td>
-                                        </tr>
-                                        <tr class="odd gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.5</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">5.5</td>
-                                            <td class="center">A</td>
-                                        </tr>
-                                        
-                                        
-                                    </tbody>
-                                </table>
+                                <?php
+                                echo '<table class="table table-striped table-bordered table-hover" id="dataTables-example plugin-table">';
+                                echo "<tr><th width=5%>Name</th><th width=5%>Type</th>
+                                      <th width=5%>DB</th><th width=5%>Host</th><th width=5%>Port</th>
+                                      <th width=5%></th><th width=5%></th><th width=5%>Status</th>
+                                        </tr>";
+
+                                foreach ($rec as $recs) {
+                                    
+                                    echo "<td>" . $recs['name'] . "</td>";
+                                    echo "<td>" . $recs['type'] . "</td>";
+                                    echo "<td>" . $recs['dbname'] . "</td>";
+                                    echo "<td>" . $recs['host'] . "</td>";
+                                    echo "<td>" . $recs['port'] . "</td>";
+                                    echo "<td align=center>" . '<button onclick="">Edit</button>' . "</td>";
+                                    echo "<td align=center>" . '<button onclick="myFunction(2)">Delete</button>' . "</td>";
+                                    echo "<td>" . '' . "</td>";
+                                    echo "</tr>";
+                                }
+
+                                echo "</table>";
+                                ?> 
+
                             </div>
                             <!-- /.table-responsive -->
                             
