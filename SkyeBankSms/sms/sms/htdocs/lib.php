@@ -17,7 +17,6 @@ function update_smpp($host, $port, $username, $pwd) {
     return 'success';
 }
 
-
 function get_smpp() {
     $one = R::getRow('select * from smpp_setting where 1 ORDER BY id LIMIT 1');
     return $one;
@@ -49,12 +48,18 @@ function get_user($username) {
 }
 
 function is_user($pwd, $user = 'admin') {
-    $result = R::getRow('select count(id) num from users where username=? and passwd=? limit 1', array($user, $pwd));
+    $result = R::getRow('select count(id) as num from users where username=? and passwd=? limit 1', array($user, $pwd));
     $val = $result['num'];
     return ($val == '1');
 }
 
 ################# Plugins ####################
+
+
+function delete_plugin($id){
+    $plugin = R::load('plugin-table', $id);
+    R::trash($plugin);
+}
 
 function get_plugins() {
     return R::getAll('select * from plugin order by id desc');
@@ -124,7 +129,6 @@ function test_plugin(){
 function get_plugin($id) {
     return R::getRow('select * from plugin where id = ? limit 1', array($id));
 }
-
 ################# SMS Test ###################
 
 function test_sms() {

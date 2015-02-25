@@ -2,7 +2,7 @@
 include_once('lib.php');
 
 	session_start(); 
-               $error = 0;
+       /*        $error = 0;
             if (isset($_POST['pwd'])) {
                 $username = 'admin';
                 $password = $_POST['pwd'];
@@ -17,7 +17,7 @@ include_once('lib.php');
                 } else {
                     $error = 1;
                 }
-            }
+            }*/
             ?>
 
 <title>Login Page- Skye Bank</title>
