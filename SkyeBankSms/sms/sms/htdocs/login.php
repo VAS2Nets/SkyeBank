@@ -1,12 +1,19 @@
 <?php
 session_start();
 include_once('lib.php');
+<<<<<<< HEAD
 #$me = is_user('admin','admin');
 #$query = get_user('admin');
 #var_dump($me);
 	 
                $error = NULL;
             if (isset($_POST['submit'])) {
+=======
+
+	session_start(); 
+       /*        $error = 0;
+            if (isset($_POST['pwd'])) {
+>>>>>>> origin/master
                 $username = 'admin';
                 $password = $_POST['pwd'];
                 #echo $password;
@@ -16,10 +23,16 @@ include_once('lib.php');
                     $_SESSION['pwd'] = 1;                                    
                     header('Location:index.php');
                 } else {
+<<<<<<< HEAD
                    $error = 'Wrong Password Used';
                    die(header('Location:login.php?loginFailed=true&error=Wrong Password Used')); 
                 }             
             } 
+=======
+                    $error = 1;
+                }
+            }*/
+>>>>>>> origin/master
             ?>
 
 <title>Login Page- Skye Bank</title>

@@ -49,7 +49,11 @@ function get_user($username) {
 }
 
 function is_user($pwd, $user = 'admin') {
+<<<<<<< HEAD
     $result = R::getRow("select count(id) as num from users where username='$user' and passwd=?", array($pwd));
+=======
+    $result = R::getRow('select count(id) as num from users where username=? and passwd=? limit 1', array($user, $pwd));
+>>>>>>> origin/master
     $val = $result['num'];
     #return ($val == '1');
     return $val;
