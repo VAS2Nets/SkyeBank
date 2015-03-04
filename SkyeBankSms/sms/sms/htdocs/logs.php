@@ -1,4 +1,3 @@
-
 <title>Skye Bank Dashboard</title>
 <!-- including the css file -->
  <?php include_once 'css.php'; ?>
@@ -20,7 +19,7 @@ window.setTimeout(function(){ document.location.reload(true); }, 15000);
         <!-- /.row -->
           <?php
         $file = file("logs.txt");
-        for ($i = count($file) - 6; $i < count($file); $i++) {
+        for ($i = count($file) - 20; $i < count($file); $i++) {
             echo $file[$i] . "\n";
             echo '<br />';
         }

@@ -1,11 +1,306 @@
-this is the first line
-this is the second line
-this is the thrid line
-this is the fourth line
-this is the fifth line
-this is the sixth line
-this is the seventh line
-this is the eighth line
-this is the ninth line
-this is the last line
-hvldfhvlkdfbhv;dkfbnvkdfnvkljdfnbvkjdfb
+[2015-Feb-26 18:38:36]: Empty Plugin table
+[2015-Feb-26 18:38:45]: Empty Plugin table
+[2015-Feb-26 18:38:55]: Empty Plugin table
+[2015-Feb-26 18:39:05]: Empty Plugin table
+[2015-Feb-26 18:39:15]: Empty Plugin table
+[2015-Feb-26 18:39:25]: Empty Plugin table
+[2015-Feb-26 18:39:35]: Empty Plugin table
+[2015-Feb-26 18:39:46]: Empty Plugin table
+[2015-Feb-26 18:39:46]: Empty Plugin table
+[2015-Feb-26 18:45:09]: Mysql connection active
+[2015-Feb-26 18:50:47]: Mysql connection active
+[2015-Feb-26 18:50:47]: Postgres connection active
+[2015-Feb-27 09:37:11]: Application Started
+[2015-Feb-27 12:12:51]: Postgres connection active
+[2015-Feb-27 12:12:51]: Mysql connection active
+[2015-Feb-27 12:27:58]: SMPP Test --- host:ww port23--- Failed
+[2015-Feb-27 12:28:21]: SMPP Test --- host:192.168.1.156 port3110--- Sucessful
+[2015-Feb-27 12:29:25]: Test SMS Sent to +2347066192100 by sammy
+[2015-Feb-27 13:09:08]: Engine Started...
+[2015-Feb-27 13:09:09]: Postgres connection active
+[2015-Feb-27 13:09:09]: Mysql connection active
+[2015-Feb-27 13:14:08]: Postgres connection active
+[2015-Feb-27 13:14:08]: Mysql connection active
+[2015-Feb-27 13:16:20]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:16:30]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:16:40]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:16:50]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:17:00]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:17:10]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:17:21]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:17:33]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:17:41]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:17:50]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:18:00]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:18:14]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:18:20]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:18:30]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:18:40]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:18:50]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:19:00]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:19:08]: Postgres connection active
+[2015-Feb-27 13:19:15]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:19:15]: Mysql connection test : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:19:43]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:19:43]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:19:43]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:19:50]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:20:00]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:20:10]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:20:20]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:20:34]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:20:40]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:20:57]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:21:00]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:21:10]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:21:20]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:21:30]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:21:40]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:22:04]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:22:04]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:22:11]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:22:22]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:22:30]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:22:40]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:22:50]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:23:00]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:23:10]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:23:20]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:23:30]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:23:40]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:23:50]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:24:00]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:24:13]: Mysql connection test : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:24:13]: Postgres connection active
+[2015-Feb-27 13:24:13]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:24:20]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:24:30]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:24:41]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:31:59]: Engine Started...
+[2015-Feb-27 13:32:10]: Mysql connection active
+[2015-Feb-27 13:32:10]: Postgres connection active
+[2015-Feb-27 13:32:42]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:32:52]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:33:03]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:33:13]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:33:23]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:33:32]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:33:42]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:33:53]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:34:20]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:34:20]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:34:23]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:34:32]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:34:42]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:34:52]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:35:02]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:35:12]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:35:23]: mysql_connection--- Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Feb-27 13:37:00]: Mysql connection active
+[2015-Feb-27 13:37:00]: Postgres connection active
+[2015-Feb-27 13:45:07]: Application Started
+[2015-Feb-27 16:38:12]: Database Connection Test --- Connection Name: mysql3  mysql Host: localhost DatabaseName: skyebank ------FAILED!!!
+[2015-Feb-27 16:39:32]: Database Connection Test --- Connection Name: mysql3  MYSQL Host: localhost DatabaseName: skyebank ------SUCCESSSFUL!!!
+[2015-Feb-27 17:03:30]: Database Connection Test --- Connection Name: slserver  SQLSERVER Host: localhost DatabaseName: skyebank ------SUCCESSSFUL!!!
+[2015-Mar-02 12:04:41]: Engine Started...
+[2015-Mar-02 12:04:42]: Postgres connection active
+[2015-Mar-02 12:04:42]: Mysql connection active
+[2015-Mar-02 12:06:02]: Engine SMPP(sendMessage) -- Negative response 0000000d found
+[2015-Mar-02 12:06:02]: Engine SMPP(sendMessage) -- Negative response 0000000d found
+[2015-Mar-02 12:06:08]: Engine Started...
+[2015-Mar-02 12:06:08]: Mysql connection active
+[2015-Mar-02 12:06:08]: Postgres connection active
+[2015-Mar-02 12:06:09]: Engine SMPP(sendMessage) -- Negative response 0000000d found
+[2015-Mar-02 12:06:09]: Engine SMPP(sendMessage) -- Negative response 0000000d found
+[2015-Mar-02 12:27:11]: Test SMS Sent to +2349097805185 by gee
+[2015-Mar-03 08:26:50]: SMPP Test --- host:192.168.1.156 port3110--- Sucessful
+[2015-Mar-03 08:34:28]: Database Connection Test --- Connection Name: mysql3  MYSQL Host: localhost DatabaseName: skyebank ------SUCCESSSFUL!!!
+[2015-Mar-03 08:49:41]: Database Connection Test --- Connection Name: mysql3  MYSQL Host: localhost DatabaseName: skyebank ------SUCCESSSFUL!!!
+[2015-Mar-03 08:49:45]: Database Connection Test --- Connection Name: mysql3  MYSQL Host: localhost DatabaseName: skyebank ------SUCCESSSFUL!!!
+[2015-Mar-03 09:07:27]: Application Started
+[2015-Mar-03 09:15:22]: Database Connection Test --- Connection Name: mysql3  MYSQL Host: localhost DatabaseName: skyebank ------SUCCESSSFUL!!!
+[2015-Mar-03 09:17:48]: DB Test: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Mar-03 09:17:48]: Database Connection Test --- Connection Name: mysql3  MYSQL Host: localhost DatabaseName: skyebank ------FAILED!!!
+[2015-Mar-03 09:17:58]: DB Test: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Mar-03 09:17:58]: Database Connection Test --- Connection Name: mysql3  MYSQL Host: localhost DatabaseName: skyebank ------FAILED!!!
+[2015-Mar-03 09:18:14]: DB Test: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[2015-Mar-03 09:18:14]: Database Connection Test --- Connection Name: mysql3  MYSQL Host: localhost DatabaseName: skyebank ------FAILED!!!
+[2015-Mar-03 09:18:22]: Database Connection Test --- Connection Name: mysql3  MYSQL Host: localhost DatabaseName: skyebank ------SUCCESSSFUL!!!
+[2015-Mar-03 17:29:10]: Engine Started...
+[2015-Mar-03 17:29:11]: Postgres connection active
+[2015-Mar-03 17:29:11]: Mysql connection active
+[2015-Mar-03 17:41:42]: Database Connection Test --- Connection Name: mysql3  MYSQL Host: localhost DatabaseName: skyebank ------SUCCESSSFUL!!!
+[2015-Mar-03 17:43:19]: Engine Started...
+[2015-Mar-03 17:43:20]: Mysql connection active
+[2015-Mar-03 17:43:21]: Postgres connection active
+[2015-Mar-03 17:45:43]: Database Connection Test --- Connection Name: mysql3  MYSQL Host: localhost DatabaseName: skyebank ------SUCCESSSFUL!!!
+[2015-Mar-03 18:03:20]: Engine Started...
+[2015-Mar-03 18:03:22]: Postgres connection active
+[2015-Mar-03 18:03:22]: Mysql connection active
+[2015-Mar-03 18:03:28]: Engine Started...
+[2015-Mar-03 18:03:29]: Mysql connection active
+[2015-Mar-03 18:03:29]: Postgres connection active
+[2015-Mar-03 18:22:09]: Engine Started...
+[2015-Mar-03 18:22:10]: Postgres connection active
+[2015-Mar-03 18:22:11]: Mysql connection active
+[2015-Mar-03 18:23:09]: Engine Started...
+[2015-Mar-03 18:23:16]: Postgres connection active
+[2015-Mar-03 18:23:16]: Mysql connection active
+[2015-Mar-03 18:26:07]: Engine Started...
+[2015-Mar-03 18:26:10]: Postgres connection active
+[2015-Mar-03 18:26:10]: Mysql connection active
+[2015-Mar-03 18:27:22]: Engine Started...
+[2015-Mar-03 18:27:23]: Mysql connection active
+[2015-Mar-03 18:27:23]: Postgres connection active
+[2015-Mar-03 18:37:49]: Engine Started...
+[2015-Mar-03 18:37:51]: Postgres connection active
+[2015-Mar-03 18:37:51]: Mysql connection active
+[2015-Mar-03 18:43:54]: Engine Started...
+[2015-Mar-03 18:43:56]: Postgres connection active
+[2015-Mar-03 18:43:56]: Mysql connection active

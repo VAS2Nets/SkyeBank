@@ -30,20 +30,23 @@ switch ($action) {
         //$flash = "Success";
         break;
     case 'update_smpp':
-        #update_smpp($host, $port, $username, $passwd); 
-        $flash = "Success";
+        $flash=update_smpp($host, $port, $username, $pwd); 
+        #$flash = "Success";
         break;
     case 'change_password':
         #change_password($newpassword, $username);
         $flash="success";
         break;
-    case'update_plugin':
-        #update plugin set name=?,dbtype=?,host=?,pwd=?,username=?,sql_query=?,update_sql=?,"
-                # "senderid_col=?,msg_col=?,msisdn_col=?,id_col=?,status=?,user=? where id=?"
-        $flash="success";
+    case getplugins;
+        $flash= "get_plugins()";
         break;
-    case '':
-        $flash="";
+    case'updateplugin':
+        $flash= update_plugin();
+        #$flash="success";
+        break;
+    case 'is_user':
+        $flash="is_user($pwd, $user = 'admin')";
+        break;
     default:
         break;
 }

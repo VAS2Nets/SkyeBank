@@ -49,6 +49,7 @@ $pid = R::store($plugin);
 $plugin2 = R::dispense('plugin');
 $plugin2->name='mysql2';
 $plugin2->dbtype='mysql';
+$plugin2->dbname='skyebank';
 $plugin2->host='localhost';
 $plugin2->pwd = 'password';
 $plugin2->username='root';
@@ -58,7 +59,7 @@ $plugin2->update_sql="update transaction_table set sms_sent = ? where id = ?";
 $plugin2->msg_template="Your account balance is [balance]";
 $plugin2->sender_id = 'Skyebank';
 $plugin2->id_col='id';
-$plugin2->msisdn_col='receiver';
+$plugin2->msisdn_col='phone_number';
 $plugin2->status='0';
 $plugin2->user='admin';
 ##

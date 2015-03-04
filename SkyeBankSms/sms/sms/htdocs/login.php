@@ -1,23 +1,25 @@
 <?php
+session_start();
 include_once('lib.php');
-
-	session_start(); 
-               $error = 0;
-            if (isset($_POST['pwd'])) {
+#$me = is_user('admin','admin');
+#$query = get_user('admin');
+#var_dump($me);
+	 
+               $error = NULL;
+            if (isset($_POST['submit'])) {
                 $username = 'admin';
                 $password = $_POST['pwd'];
-                $_SESSION['currUser'] = '$username';
-                $user_id = is_user($pwd, $user = 'admin');
-                $query = get_user($username);
-                if (mysql_num_rows($query) > 0) {
-                    if ($user_id == "admin") {
-                        $_SESSION['pwd'] = 1;
-                        header('Location:index.php');
-                    }
+                #echo $password;
+                $user_id = is_user($password, $user = 'admin');
+                if($user_id == 1)   {
+                    $_SESSION['currUser'] = '$username';
+                    $_SESSION['pwd'] = 1;                                    
+                    header('Location:index.php');
                 } else {
-                    $error = 1;
-                }
-            }
+                   $error = 'Wrong Password Used';
+                   die(header('Location:login.php?loginFailed=true&error=Wrong Password Used')); 
+                }             
+            } 
             ?>
 
 <title>Login Page- Skye Bank</title>
@@ -47,21 +49,25 @@ include_once('lib.php');
                     }
                 </script>
                 <div class="panel-body">
-                    <form role="form" name="login" id="login" method="post" action="controller.php?action=is_user&redirect=index.php" onsubmit="return(validate());" >
+                    <form role="form" name="login" id="login" method="post" action="<?php echo ($_SERVER["PHP_SELF"]); ?> " onsubmit=return(validate()) >
                         <fieldset>
-                            <!-- <div class="form-group">
+                            
+                            <!-- <div class="form-group">controller.php?action=is_user&redirect=index.php
                                  <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
                              </div> -->
                             <div class="form-group" align="center">
-                                <label>Administrator</label> 
+                                <label>Administrator</label>
+                            </div>
+                            <div class="form-group" align="center">
+                                <label><?php if($_GET["loginFailed"]) echo $_GET['error']; ?></label>
                             </div>
                             <div class="form-group">
                                 <label style="float:left;">Password:</label>  
-                                <input class="form-control" placeholder="Password" name="pwd" type="password" value="" style="width:60%;float:left;margin-left:15%;">
+                                <input class="form-control" placeholder="Password" id="pwd" name="pwd" type="password" value="" style="width:60%;float:left;margin-left:15%;">
                             </div>
                             <br /><br /><p></p>
                           <!-- Change this to a button or input when using this as a form -->
-                            <button class="btn btn-lg btn-success btn-block">Login</button>
+                          <button type=submit name="submit" class="btn btn-lg btn-success btn-block">Login</button>
                         </fieldset>
                     </form>
                 </div>
