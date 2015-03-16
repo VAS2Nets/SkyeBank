@@ -1,6 +1,19 @@
 <?php
 include_once 'lib.php';
-$rec = get_smpp();
+//$rec = get_smpp();
+
+if (isset($_POST['sav'])) {
+    $passwd = $_POST['passwd'];
+  
+    #echo $password;
+    #$save_value = add_plug($name,$type,$ip,$pwd,$dbname,$username,$port,$sql_query,$update_sql,$sender,$msg,$cid,$receiver);
+    $svalue = change_password($passwd, $username = 'admin');
+    if($svalue == 'Success')   {                                 
+        header('Location:index.php');
+    } else {
+       die(header('Location:reset.php')); 
+    }             
+}
 ?>
 
 <title>Skye Bank Dashboard</title>
@@ -21,7 +34,7 @@ $rec = get_smpp();
         <!-- /.row -->
         <script type="text/javascript">
             function pvalidate() {
-                if (document.reset.npass.value != document.reset.cnpass.value)
+                if (document.reset.passwd.value != document.reset.cnpass.value)
                 {
                     alert('Passwords did not match!');
                     return false;
@@ -35,17 +48,17 @@ $rec = get_smpp();
             }
         </script>
         <div style="width:80%;margin-left: 6%;border: 1px solid #ccc;"> 
-            <form name = "reset" id="reset" style="margin-left: 10%;margin-top:5%;" method="post" action="controller.php?action=change_password&redirect=login.php" onsubmit="return(validate());" >
+           <form name = "reset" id="reset" style="margin-left: 10%;margin-top:5%;" method="post" action="<?php echo ($_SERVER["PHP_SELF"]); ?>">
                 <div class="form-group">
                     <label style="float:left;">New Password:</label>
-                    <input class="form-control"  type="password" placeholder="Enter new password"  id="npass" name="npass" style="margin-left:30%;width:35%;">
+                    <input class="form-control"  type="password" placeholder="Enter new password"  id="passwd" name="passwd" style="margin-left:30%;width:35%;">
                 </div>
                 <div class="form-group">
                     <label style="float:left;">Confirm New Password:</label>
                     <input class="form-control" type="password" placeholder="Confirm new password" id="cnpass" name="cnpass" style="margin-left:30%;width:35%;"><span id='message'></span>
                 </div>
-                <button type="reset" class="btn btn-default" style="width:20%;background:#2c4762;color:#fff;" name="reset">Reset</button>
-                <button type="submit" class="btn btn-default" style="width:20%;background:#2c4762;color:#fff;" name="add" onclick="return pvalidate()">Save</button>
+                <button type="reset" class="btn btn-default" style="width:20%;background:#2c4762;color:#fff;" name="reset">Clear</button>
+                <button type="submit" class="btn btn-default" style="width:20%;background:#2c4762;color:#fff;" name="sav" onclick="return pvalidate()">Save</button>
 
 
             </form>

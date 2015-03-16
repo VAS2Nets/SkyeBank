@@ -1,8 +1,41 @@
 <?php
 include_once 'lib.php';
-$roc = get_plugin();
-//$testpl = test_plugin();
-//var_dump($testpl);
+
+$id = isset($_REQUEST) ? $_REQUEST['id']:$_POST['id'];
+/*
+if(isset($_REQUEST['id'])){
+    $id = $_REQUEST['id']; 
+    $rc = get_plugin($id);
+}
+ * 
+ */
+$rc = get_plugin($id);
+//var_dump($rc);
+
+if (isset($_POST['sub'])) {
+    
+    $name = $_POST['name'];
+    $type = $_POST['dbtype'];
+    $dbname = $_POST['dbname'];
+    $ip = $_POST['ip'];
+    $port = $_POST['port'];
+    $username = $_POST['username'];
+    $pwd = $_POST['pwd'];
+    $sql_query = $_POST['sql_query'];
+    $update_sql = $_POST['update_sql'];
+    $msg = $_POST['msg'];
+    $sender = $_POST['sender'];
+    $receiver = $_POST['receiver'];
+    $cid = $_POST['cid'];
+    #echo $password;
+    #$save_value = add_plug($name,$type,$ip,$pwd,$dbname,$username,$port,$sql_query,$update_sql,$sender,$msg,$cid,$receiver);
+    $svalue = update_plugin();
+    if($svalue == 'Success')   {                                
+        header('Location:viewplugins.php?updatepluginUpdate=1&updatepluginUp=Update Successful');
+    } else {
+       die(header('Location:viewplugins.php?updatepluginUpdate=2&updatepluginUp=Update Failed')); 
+    }             
+}     
 ?>
 <title>Skye Bank Dashboard</title>
 <?php  include_once 'css.php'; ?>
@@ -106,18 +139,19 @@ $roc = get_plugin();
         return(true);
     }
 </script>
+
                   <div style="width:45%;margin-left: 2%;float:left;"> 
-    <p align="center" style="color:#398439;margin-top: 3%;line-height:1em;"><?php echo $_REQUEST['flash']; ?></p>
-                           <form name ="updateplugin" id="updateplugin" method="post" action="controller.php?action=updateplugin&redirect=addplugin.php" onsubmit="return(validate());" > 
+   <p align="center" style="color:#398439;margin-top: 3%;line-height:1em;"><?php if($_GET["updatepluginUpdate"]){ echo $_GET['updatepluginUp'];} ?></p>
+                           <form name ="updateplugin" id="updateplugin" method="post" action="<?php echo ($_SERVER["PHP_SELF"]); ?>" onsubmit="return(validate());" > 
                            <div class="form-group">
                                     <div style="float: left;">    <label>Name:</label></div>
-                                    <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Name" size="35" name="name">
+                                    <div style="margin-left: 1%;float:right;"> <input class="form-control" value="<?php echo $rc['name']; ?>" size="35" name="name" placeholder="<?php echo ( htmlspecialchars( $rc['name'] ) ); ?>">
                                     </div>
                                 </div>
                             <div style="clear: both;"></div><p></p>
                             <div class="form-group">
                                 <div style="float: left;"> <label>Database Type:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <select class="form-control" name="type">
+                                <div style="margin-left: 1%;float:right;"> <select class="form-control" name="dbtype" value="<?php echo ( htmlspecialchars($rc['dbtype'])); ?>" >
                                         <option>MYSQL</option>
                                         <option>ORACLE</option>
                                         <option>POSTGRE</option>
@@ -129,46 +163,46 @@ $roc = get_plugin();
                             <div class="form-group">
 
                                 <div style="float: left;"> <label>Database Name:</label> </div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Database Name" size="35" name="dbname">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" value="<?php echo ( htmlspecialchars($rc['dbname'])); ?>" size="35" name="dbname">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
 
                             <div class="form-group">
                                 <div style="float: left;"><label>Host/IP:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Host/IP" size="35" name="ip">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" value="<?php echo ( htmlspecialchars($rc['host'])); ?>" size="35" name="ip">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
                             <div class="form-group">
                                 <div style="float: left;"><label>Port:</label></div>
-                                <div style="margin-left: 1%;float:right;">    <input class="form-control" placeholder="Enter Port" size="35" name="port">
+                                <div style="margin-left: 1%;float:right;">    <input class="form-control" value="<?php echo ( htmlspecialchars($rc['port'])); ?>" size="35" name="port">
                                 </div></div>
                             <div style="clear: both;"></div><p></p><div class="form-group">
                                 <div style="float: left;">  <label>Username:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Username" size="35" name="username">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" value="<?php echo ( htmlspecialchars($rc['username'])); ?>" size="35" name="username">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
                             <div class="form-group">
                                 <div style="float: left;"><label>Password:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Password" type="password" size="35" name="pwd">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" value="<?php echo ( htmlspecialchars($rc['pwd'])); ?>" type="password" size="35" name="pwd">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
 
                             <div class="form-group">
                                 <div style="float: left;">  <label>Sql Query:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <textarea class="form-control" rows="3" style="width:275px;height:100px;" placeholder="Enter SQL Query" name="sql_query"></textarea>
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" rows="3" value="<?php echo ( htmlspecialchars($rc['sql_query'])); ?>" name="sql_query" size ="35" style="height:100px;" ></input>
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
                             <div class="form-group">
                                 <div style="float: left;">  <label>Update Query:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <textarea class="form-control" rows="3" style="width:275px;height:100px;" placeholder="Update SQL Squery" name="update_sql"></textarea>
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" size="35" style="height:100px;" value="<?php echo ( htmlspecialchars($rc['update_sql'])); ?>" name="update_sql"></input>
                                 </div></div>
                             <div style="clear: both;"></div><p></p><p></p>
                             <div class="form-group">
                                 <div style="float: left;"><label>Message:</label></div>
-                                <div style="margin-left: 1%;float:right;"><input class="form-control" placeholder="Enter message column" size="35" name="msg">
+                                <div style="margin-left: 1%;float:right;"><input class="form-control" value="<?php echo ( htmlspecialchars($rc['msg_col'])); ?>" size="35" name="msg">
                                 </div></div>
                              <div style="clear: both;"></div><p></p><p></p>
-                            <button type="submit" class="btn btn-default" style="width:100%;background: #08C;color:#fff;" name="sub">Update</button>
+                            <button type="submit" class="btn btn-default" style="width:100%;background: #08C;color:#fff;" name="sub" id="sub">Update</button>
                    
                         <p></p>
                     </div>
@@ -177,7 +211,7 @@ $roc = get_plugin();
                         
                             <div class="form-group">
                                 <div style="float: left;">    <label>What column is Sender ID:</label></div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Sender id column" size="25" name="sender">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" value="<?php echo ( htmlspecialchars($rc['senderid_col'])); ?>" size="25" name="sender">
                                 </div>
                             </div>
                             <div style="clear: both;"></div><p></p>
@@ -185,15 +219,16 @@ $roc = get_plugin();
                             <div class="form-group">
 
                                 <div style="float: left;"> <label>What column is Receiver:</label> </div>
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter receiver column" size="25" name="receiver">
+                                <div style="margin-left: 1%;float:right;"> <input class="form-control" value="<?php echo ( htmlspecialchars($rc['msisdn_col'])); ?>" size="25" name="receiver">
                                 </div></div>
                             <div style="clear: both;"></div><p></p>
                             
                             <div class="form-group">
                                 <div style="float: left;"> <label>What column is Row ID:</label></div>
-                                <div style="margin-left: 1%;float:right;"><input class="form-control" placeholder="Enter row id Column" size="25" name="cid">
+                                <div style="margin-left: 1%;float:right;"><input class="form-control" value="<?php echo ( htmlspecialchars($rc['id_col'])); ?>" size="25" name="cid">
                                 </div></div>
                             <div style="clear: both;"></div><br /><br />
+                            <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         </form>
                         <p></p>
                     </div>

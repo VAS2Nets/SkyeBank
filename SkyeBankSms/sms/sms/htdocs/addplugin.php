@@ -1,8 +1,8 @@
 <?php
 include_once 'lib.php';
-#$roc = add_plugin();
+//$roc = add_plugin();
 //$testpl = test_plugin();
-#var_dump($roc);
+//var_dump($testpl);
 //controller.php?action=addplugin&redirect=addplugin.php
 if (isset($_POST['savi'])) {
     $name = $_POST['name'];
@@ -19,13 +19,16 @@ if (isset($_POST['savi'])) {
     $receiver = $_POST['receiver'];
     $cid = $_POST['cid'];
     #echo $password;
+    #
     #$save_value = add_plug($name,$type,$ip,$pwd,$dbname,$username,$port,$sql_query,$update_sql,$sender,$msg,$cid,$receiver);
-    $svalue = add_plug($name,$type,$ip,$pwd,$dbname,$username,$port,$sql_query,$update_sql,$sender,$msg,$cid,$receiver);
+    
+    $svalue = add_plug();
     if($svalue == 'Success')   {                                 
-        header('Location:addplugin.php?addpluginUpdate=1&addpluginUp=Update Successful');
+        die(header('Location:addplugin.php?addpluginUpdate=1&addpluginUp=Update Successful'));
     } else {
        die(header('Location:addplugin.php?addpluginUpdate=2&addpluginUp=Update Failed')); 
-    }             
+    } 
+     die(header("Location:addplugin.php?addpluginTest=2&addpluginSa=Test Failed&name=$name&dbtype=$type&dbname=$dbname&ip=$ip&port=$port&username=$username&sql_query=$sql_query&update_sql=$update_sql&msg=$msg&sender=$sender&receiver=$receiver&cid=$cid"));
 }
 if (isset($_POST['test'])) {
     $name = $_POST['name'];
@@ -42,13 +45,17 @@ if (isset($_POST['test'])) {
     $receiver = $_POST['receiver'];
     $cid = $_POST['cid'];
     #echo $password;
-    $test_value = test_plug($name,$type,$dbname,$port,$host,$username,$pwd);
+    $test_value = test_plug($name,$type,$dbname,$port,$ip,$username,$password);
     #echo $test_value;
+    /*
     if($test_value == 'Success')   {                                 
         header("Location:addplugin.php?addpluginTest=1&addpluginSa=Test Successful&name=$name&dbtype=$type&dbname=$dbname&ip=$ip&port=$port&username=$username&sql_query=$sql_query&update_sql=$update_sql&msg=$msg&sender=$sender&receiver=$receiver&cid=$cid");
     } else {
        die(header("Location:addplugin.php?addpluginTest=2&addpluginSa=Test Failed&name=$name&dbtype=$type&dbname=$dbname&ip=$ip&port=$port&username=$username&sql_query=$sql_query&update_sql=$update_sql&msg=$msg&sender=$sender&receiver=$receiver&cid=$cid")); 
-    }             
+    }
+     * 
+     */  
+     die(header("Location:addplugin.php?addpluginTest=2&addpluginSa=$test_value"));
 }
 ?>
 <title>Skye Bank Dashboard</title>
@@ -172,7 +179,7 @@ if (isset($_POST['test'])) {
                                 <div style="margin-left: 1%;float:right;"> <select class="form-control" name="dbtype" id="dbtype" value="<?php echo htmlspecialchars($_GET['dbtype']); ?>">
                                         <option>MYSQL</option>
                                         <option>ORACLE</option>
-                                        <option>POSTGRES</option>
+                                        <option>POSTGRE</option>
                                         <option>SQLSERVER</option>
 
                                     </select>
@@ -220,13 +227,8 @@ if (isset($_POST['test'])) {
                                 <div style="margin-left: 1%;float:right;"><input class="form-control" placeholder="Enter message column" size="35" name="msg" id="msg" value="<?php echo htmlspecialchars($_GET['msg']); ?>">
                                 </div></div>
                              <div style="clear: both;"></div><p></p><p></p>
-<<<<<<< HEAD
                              <button type="submit" class="btn btn-default" style="width:50%;background: #08C;color:#fff;" name="savi" id="savi">Save</button>
                              <button type="submit" class="btn btn-default" style="width:48%;background:#2c4762;color:#fff;" name="test" id="test">Test Connection</button>
-=======
-                            <button type="submit" class="btn btn-default" style="width:50%;background: #08C;color:#fff;" name="sub">Save</button>
-                            <button type="submit" class="btn btn-default" style="width:48%;background:#2c4762;color:#fff;" name="test">Test Connection</button>
->>>>>>> origin/master
 
                        
                         <p></p>
@@ -236,11 +238,7 @@ if (isset($_POST['test'])) {
                         
                             <div class="form-group">
                                 <div style="float: left;">    <label>What column is Sender ID:</label></div>
-<<<<<<< HEAD
                                 <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Sender id column" size="25" name="sender" id="sender" value="<?php echo htmlspecialchars($_GET['sender']); ?>">
-=======
-                                <div style="margin-left: 1%;float:right;"> <input class="form-control" placeholder="Enter Sender id column" size="25" name="sender">
->>>>>>> origin/master
                                 </div>
                             </div>
                             <div style="clear: both;"></div><p></p>
@@ -267,7 +265,7 @@ if (isset($_POST['test'])) {
 </div>
 <!-- JS files -->
 <?php include_once 'js.php'; ?>
-<?php include_once 'footer.php'; ?>
+ <?php include_once 'footer.php'; ?>
 <!-- Page-Level Demo Scripts - Notifications - Use for reference -->
 <script>
 // tooltip demo

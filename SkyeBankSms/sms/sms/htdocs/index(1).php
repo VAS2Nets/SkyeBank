@@ -2,7 +2,7 @@
       <!-- css -->
  <?php include_once 'css.php'; ?>
    <div id="wrapper">
- 
+ <
         <!-- Navigation -->
        <?php include_once 'nav.php'; ?>
 
@@ -43,7 +43,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <img src="img/cruelg.png" alt="skye" width="65" height="55"/> 
+                                    <img src="img/logs.png" alt="skye" width="66" height="55"/> 
                                 </div>
                                 <div class="col-xs-9 text-right">
                                      <div class="huge"></div>
@@ -65,7 +65,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                  <img src="img/dope.png" alt="skye" width="66" height="55"/>
+                                  <img src="img/plugins.gif" alt="skye" width="66" height="55"/>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"></div>
@@ -87,7 +87,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                   <img src="img/calling.png" alt="skye" width="66" height="55"/>
+                                   <img src="img/tst.png" alt="skye" width="66" height="55"/>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"></div>
@@ -104,29 +104,21 @@
                         </a>
                     </div>
                 </div>
-            </div><div style="margin-top: 5%;float:right;"> 
-            <!-- <script type="text/javascript">
+            </div><div style="margin-top: 5%;float:right;background: #08C;color:#000;"> 
+                <script type="text/javascript">
 function change( engine )
 {
     if ( engine.value === "START ENGINE" )
-        
-        {engine.value = "STOP ENGINE";
-        window.open('start_engine.php','_self');
-        //window.location="start_engine.php";
+       {engine.value = "STOP ENGINE";
+        window.location="start_engine.php";
     }
     else
         {engine.value = "START ENGINE";
-        window.location="stop_engine.php";
-        target="_blank";
-    }
+        window.location="stop_engine.php";}
 }
-</script>
-<input type="button" id="eng" value="START ENGINE" onclick="return change(this);" style="width:200px;height:50px;background:#039;color:#fff;" /></div> -->
-          <form action="start_engine.php"><button style="background: #08C;color:#000;">START ENGINE</button></form>
-          <form action="stop_engine.php" style="margin-top: -12px;"><button style="background: #08C;color:#000;">&nbsp;STOP&nbsp;&nbsp;ENGINE</button></form>
-       <!-- <button onclick="window.open('http://localhost:8000/stop_engine.bat')">STOP 1</button>
-            <p><a href="http://localhost:8000/stop_engine.bat"><button>STOP 2</button></a></> -->
-            </div>
+                </script>
+       <input type="button" id="eng" value="START ENGINE" onclick="return change(this);" style="width:200px;height:50px;background:#039;color:#fff;" /></div>
+        </div>
         
    </div>   
        <?php include_once 'js.php'; ?>

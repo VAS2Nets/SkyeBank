@@ -23,22 +23,22 @@ include_once 'lib.php';
 
     function validate()
     {
-      if (document.tstmsg.sender_id.value == "")
+      if (document.tstmsg.sender.value == "")
         {
             alert("Please provide your Sender ID");
-            document.tstmsg.sender_id.focus();
+            document.tstmsg.sender.focus();
             return false;
         }
-        if (document.tstmsg.msisdn.value == "")
+        if (document.tstmsg.receiver.value == "")
         {
             alert("Please provide your Mobile No.");
-            document.tstmsg.msisdn.focus();
+            document.tstmsg.receiver.focus();
             return false;
         }
-        if (document.tstmsg.message.value == "")
+        if (document.tstmsg.msg.value == "")
         {
             alert("Please provide your Message");
-            document.tstmsg.message.focus();
+            document.tstmsg.msg.focus();
             return false;
         }
         

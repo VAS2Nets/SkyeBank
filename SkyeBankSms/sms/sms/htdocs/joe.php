@@ -17,7 +17,8 @@ $cmd = "\"$pwd\jdk\bin\java.exe\" -jar SMSTest.jar iheanyi +2347032700097 againa
 */
 #$cmd = "\"$pwd\jdk\bin\java.exe\" -version 2>&1";
 
-$cmd = "\"$pwd\jdk\bin\java.exe\" -jar DBConnectionTest.jar mysql3 MYSQL skyebank 3306 localhost root password 2>&1";
+$cmd = "\"$pwd\jdk\bin\java.exe\" -jar DBConnectionTest.jar oracle ORACLE xe 1521 83.138.190.168 voting Voting123_ 2>&1";
+#$cmd = "\"$pwd\jdk\bin\java.exe\" -jar DBConnectionTest.jar fusedb MYSQL fuse 3306 83.138.190.170 fuse fuse123 2>&1";
 $output = shell_exec($cmd);
 echo $output;
 /*

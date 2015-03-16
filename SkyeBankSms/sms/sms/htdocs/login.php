@@ -1,44 +1,31 @@
 <?php
 session_start();
 include_once('lib.php');
-<<<<<<< HEAD
-#$me = is_user('admin','admin');
+//$me = is_user('admin','admin');
 #$query = get_user('admin');
-#var_dump($me);
+//var_dump($me);
 	 
                $error = NULL;
             if (isset($_POST['submit'])) {
-=======
-
-	session_start(); 
-       /*        $error = 0;
-            if (isset($_POST['pwd'])) {
->>>>>>> origin/master
                 $username = 'admin';
-                $password = $_POST['pwd'];
+                $pwd = $_POST['pwd'];
                 #echo $password;
-                $user_id = is_user($password, $user = 'admin');
+                $user_id = is_user($pwd, $user = 'admin');
                 if($user_id == 1)   {
                     $_SESSION['currUser'] = '$username';
                     $_SESSION['pwd'] = 1;                                    
                     header('Location:index.php');
                 } else {
-<<<<<<< HEAD
                    $error = 'Wrong Password Used';
                    die(header('Location:login.php?loginFailed=true&error=Wrong Password Used')); 
                 }             
             } 
-=======
-                    $error = 1;
-                }
-            }*/
->>>>>>> origin/master
+             session_destroy();
             ?>
 
 <title>Login Page- Skye Bank</title>
 
 <?php include_once 'css.php'; ?>
-
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
@@ -72,7 +59,7 @@ include_once('lib.php');
                                 <label>Administrator</label>
                             </div>
                             <div class="form-group" align="center">
-                                <label><?php if($_GET["loginFailed"]) echo $_GET['error']; ?></label>
+                                <label style="color: #c00;"><?php if($_GET["loginFailed"]) echo $_GET['error']; ?></label>
                             </div>
                             <div class="form-group">
                                 <label style="float:left;">Password:</label>  

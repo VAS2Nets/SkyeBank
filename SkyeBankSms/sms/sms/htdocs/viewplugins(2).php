@@ -34,22 +34,28 @@ $rec = get_plugins();
                         <!-- /.panel-heading -->
                         <div>
                             <div class="table-responsive">
-                                <script src="js/jquery-1.11.1.min.js"></script>
-                                <script language="JavaScript" type="text/javascript">
-                                $(document).ready(function(){
-                                    $("a.delete").click(function(e){
-                                        if(!confirm('Are you sure?')){
-                                            e.preventDefault();
-                                            return false;
-                                        }
-                                        return true;
-                                    });
-                                });
+
+                                <script> $('#stat').each(function(){
+
+                             var closestTd = $(this).closest('td');
+                             var valueCache = parseInt($(this).val());
+
+                             if(valueCache > 0) {
+                                closestTd .addClass('positive');
+                             }
+                             else if(valueCache < 0) {
+                                closestTd.addClass('negative');
+                             }
+                             else {
+                                closestTd.addClass('negative');
+                             }
+
+                          });
                                 </script>
 
                                 <?php
-                                
-                                
+                                $rss = $recs['status'];
+                                if ($rss == 1){$chk="Active";}else{$chk= "Inactive";}
                                 
                                 echo '<table class="table table-striped table-bordered" id="dataTables-example" name="dataTables-example">';
                                 echo "<tr><th width=5%>Name</th><th width=5%>Type</th>
@@ -58,23 +64,22 @@ $rec = get_plugins();
                                         </tr>";
 
                                 foreach ($rec as $recs) {
-                                    $rss = $recs['status'];
-                                    if ($rss == 1){$chk='<img src="img/green.png">';}else{$chk='<img src="img/red.png">';}
                                     echo "<td>" . $recs['name'] . "</td>";
                                     echo "<td>" . $recs['dbtype'] . "</td>";
                                     echo "<td>" . $recs['dbname'] . "</td>";
                                     echo "<td>" . $recs['host'] . "</td>";
                                     echo "<td>" . $recs['port'] . "</td>";
                                     echo "<td align=center>" . '<a href="updateplugin.php?id='.$recs['id'] .'">Edit</a>' . "</td>";
-                                    echo "<td align=center>" . '<a class="delete" href="process.php?id='.$recs['id'] .'"><img alt="" align="absmiddle" border="0" src="img/delete.png" /></a>' . "</td>";
-                                    echo "<td>" .$chk. "</td>";
+                                    echo "<td align=center>" . '<a href="process.php?id='.$recs['id'] .'" ><img alt="" align="absmiddle" border="0" src="img/delete.png" /></a>' . "</td>";
+                                    echo "<td class='stat'>" .$chk. "</td>";
                                     echo "</tr>";
                                     }
                                     echo "</table>";
                                 ?> 
                             </div>
                             <!-- /.table-responsive -->
-                       </div>
+                            
+                        </div>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
